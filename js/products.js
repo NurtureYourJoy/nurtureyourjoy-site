@@ -65,6 +65,11 @@ const COLLECTIONS = [
     extraNotes: [
       "Made with real cedar, not substandard particle board."
     ],
+    video: {
+      youtubeId: "-TFIqdvF_04",
+      title: "Watch a Spanish Mission Get Built",
+      caption: "From raw cedar to finished chapel — see the whole build, start to finish."
+    },
     cover: "assets/collections-hero/hero-spanish-mission.jpg",
     status: "live",
     items: [

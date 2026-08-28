@@ -162,6 +162,19 @@
         dimsLine + notesLines + "</div>";
       section.appendChild(head);
 
+      if(c.video && c.video.youtubeId){
+        const videoBlock = el("div", "coll-video");
+        videoBlock.innerHTML =
+          '<div class="video-frame"><iframe src="https://www.youtube.com/embed/' + c.video.youtubeId + '" title="' +
+          (c.video.title || c.name + " build video") +
+          '" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>' +
+          '<div class="video-caption">' +
+          (c.video.title ? "<h3>" + c.video.title + "</h3>" : "") +
+          (c.video.caption ? "<p>" + c.video.caption + "</p>" : "") +
+          "</div>";
+        section.appendChild(videoBlock);
+      }
+
       if(c.status === "live" && c.items.length){
         const gallery = el("div", "gallery");
         c.items.forEach(function(item){
