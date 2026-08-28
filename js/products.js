@@ -62,11 +62,17 @@ const COLLECTIONS = [
     name: "Spanish Mission",
     tagline: "Bell towers, cross spires and arched windows, modeled after the old mission chapels.",
     dimensions: "12.25\" tall x 10\" deep x 6.75\" wide",
+    extraNotes: [
+      "Made with real cedar, not substandard particle board."
+    ],
     cover: "assets/collections-hero/hero-spanish-mission.jpg",
     status: "live",
     items: [
-      { files: ["ai-rb1.jpg", "mission-rb1-front.jpg", "mission-rb1-side.jpg"], name: "Mission Chapel, Teal & Red", price: 100, shipping: "Includes shipping (contiguous US only)", buyLink: "https://buy.stripe.com/eVq5kw3nT6bkcd00x8bwk0r" },
-      { files: ["ai-rg1.jpg", "mission-rg1-front.jpg", "mission-rg1-side.jpg"], name: "Mission Chapel, Red & Teal", price: 100, shipping: "Includes shipping (contiguous US only)", buyLink: "https://buy.stripe.com/aFa6oA7E943c5OC93Ebwk0s" }
+      { files: ["mission-tealblue-front1.jpg", "mission-tealblue-front2.jpg", "mission-tealblue-back.jpg"], name: "Spanish Mission, Teal & Blue", price: 100, shipping: "Includes shipping (contiguous US only)", buyLink: "https://buy.stripe.com/28EbIU6A543cel8gw6bwk0B" },
+      { files: ["mission-terracottaochre-front1.jpg", "mission-terracottaochre-front2.jpg", "mission-terracottaochre-back.jpg"], name: "Spanish Mission, Terra Cotta & Ochre", price: 100, shipping: "Includes shipping (contiguous US only)", buyLink: "https://buy.stripe.com/cNiaEQ2jP57g7WK2Fgbwk0C" },
+      { files: ["mission-redblue-front1.jpg", "mission-redblue-front2.jpg"], name: "Spanish Mission, Red & Blue", price: 100, shipping: "Includes shipping (contiguous US only)", buyLink: "https://buy.stripe.com/aFa6oA1fLbvEa4S3Jkbwk0D" },
+      { files: ["mission-ochreteal-front1.jpg", "mission-ochreteal-back.jpg"], name: "Spanish Mission, Ochre & Teal", price: 100, shipping: "Includes shipping (contiguous US only)", buyLink: "https://buy.stripe.com/6oUcMY4rXbvEcd0fs2bwk0E" },
+      { files: ["mission-ochreterracotta-front1.jpg", "mission-ochreterracotta-back.jpg"], name: "Spanish Mission, Ochre & Terra Cotta", price: 100, shipping: "Includes shipping (contiguous US only)", buyLink: "https://buy.stripe.com/eVqfZa8Id7foa4Sfs2bwk0F" }
     ]
   },
   {
