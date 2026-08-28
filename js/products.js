@@ -134,3 +134,43 @@ const COLLECTIONS = [
 ];
 
 const CONTACT_EMAIL = "nurtureyourjoy2026@gmail.com";
+
+/* ==========================================================================
+   MERCH — Printify Pop-Up Store items
+   --------------------------------------------------------------------------
+   Photos are hosted by Printify, so "image" is a full URL rather than a
+   local file. "url" is the product's page on the Printify store — that's
+   where the actual checkout happens, so clicking "Shop Now" leaves the site.
+   ========================================================================== */
+const MERCH_ITEMS = [
+  {
+    name: "Quail 'Nurture Your Joy' Graphic Hoodie",
+    price: 46.25,
+    image: "https://images-api.printify.com/mockup/6a918898d86146cef500f2ac/42229/98424/quail-nurture-your-joy-graphic-hoodie.jpg",
+    url: "https://nurture-your-joy.printify.me/product/31393159"
+  },
+  {
+    name: "White Classic Dad Cap, Embroidered Bird Accent",
+    price: 35.60,
+    image: "https://images-api.printify.com/mockup/6a918484fdca556d3103c8f2/105379/102307/white-classic-dad-cap-with-minimal-embroidered-bird-accent-casual-baseball-hat.jpg",
+    url: "https://nurture-your-joy.printify.me/product/31392897"
+  },
+  {
+    name: "T-Shirt",
+    price: 26.77,
+    image: "https://images-api.printify.com/mockup/6a918551fdca556d3103c9bf/78963/98445/t-shirt.jpg",
+    url: "https://nurture-your-joy.printify.me/product/31392970"
+  },
+  {
+    name: "Nurture Your Joy Quail T-Shirt",
+    price: 24.99,
+    image: "https://images-api.printify.com/mockup/6a91823a7366aa756f0e4877/78883/98445/nurture-your-joy-quail-t-shirt.jpg",
+    url: "https://nurture-your-joy.printify.me/product/31392814"
+  },
+  {
+    name: "Nurture Your Joy T-Shirt — Quail Graphic Comfort Tee",
+    price: 23.06,
+    image: "https://images-api.printify.com/mockup/6a917e617366aa756f0e4519/102354/98445/nurture-your-joy-t-shirt-quail-graphic-comfort-tee.jpg",
+    url: "https://nurture-your-joy.printify.me/product/31392722"
+  }
+];

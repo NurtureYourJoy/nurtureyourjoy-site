@@ -275,6 +275,24 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .piece .actions{ margin-top:auto; display:flex; }
 .piece .actions .btn{ width:100%; }
 
+/* ---------- merch grid ---------- */
+.merch-grid{
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(270px,1fr)); gap:28px;
+}
+.merch-card{
+  background:var(--paper); box-shadow:var(--shadow); overflow:hidden;
+  display:flex; flex-direction:column;
+}
+.merch-card .merch-frame{ display:block; aspect-ratio:4/5; overflow:hidden; background:var(--cream-2); }
+.merch-card .merch-frame img{ width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.merch-card:hover .merch-frame img{ transform:scale(1.05); }
+.merch-card .merch-info{ padding:16px 22px 22px; display:flex; flex-direction:column; gap:12px; flex:1; }
+.merch-card .merch-info h4{ font-size:1.15rem; margin:0; }
+.merch-card .merch-info .price{ font-size:13px; letter-spacing:.05em; color:var(--ink-soft); }
+.merch-card .merch-info .actions{ margin-top:auto; display:flex; }
+.merch-card .merch-info .actions .btn{ width:100%; }
+.merch-note{ max-width:60ch; margin-bottom:48px; }
+
 /* ---------- collection build video ---------- */
 .coll-video{ margin:8px 0 40px; }
 .coll-video .video-frame{ position:relative; width:100%; max-width:760px; padding-top:56.25%; border-radius:14px; overflow:hidden; box-shadow:var(--shadow); background:#000; }

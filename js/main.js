@@ -228,6 +228,20 @@
     });
   }
 
+  /* ---------- render: merch grid ---------- */
+  const merchGrid = document.querySelector("[data-merch-grid]");
+  if(merchGrid && typeof MERCH_ITEMS !== "undefined"){
+    MERCH_ITEMS.forEach(function(m){
+      const card = el("div", "merch-card");
+      card.innerHTML =
+        '<a class="merch-frame" href="' + m.url + '" target="_blank" rel="noopener"><img loading="lazy" src="' + m.image + '" alt="' + m.name + '"></a>' +
+        '<div class="merch-info"><h4>' + m.name + "</h4>" +
+        '<div class="price">$' + m.price.toFixed(2) + "</div>" +
+        '<div class="actions"><a class="btn btn-small" href="' + m.url + '" target="_blank" rel="noopener">Shop Now</a></div></div>';
+      merchGrid.appendChild(card);
+    });
+  }
+
   /* ---------- year in footer ---------- */
   const yearEl = document.querySelector("[data-year]");
   if(yearEl) yearEl.textContent = new Date().getFullYear();
