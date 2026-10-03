@@ -152,7 +152,7 @@ const MERCH_ITEMS = [
   },
   {
     name: "Quail 'Nurture Your Joy' Graphic Hoodie",
-    price: 46.25,
+    price: 37.99,
     image: "https://images-api.printify.com/mockup/6a918898d86146cef500f2ac/42229/98424/quail-nurture-your-joy-graphic-hoodie.jpg",
     url: "https://nurture-your-joy.printify.me/product/31393159"
   },
@@ -170,7 +170,7 @@ const MERCH_ITEMS = [
   },
   {
     name: "Nurture Your Joy Quail T-Shirt",
-    price: 24.99,
+    price: 23.00,
     image: "https://images-api.printify.com/mockup/6a91823a7366aa756f0e4877/78883/98445/nurture-your-joy-quail-t-shirt.jpg",
     url: "https://nurture-your-joy.printify.me/product/31392814"
   },
