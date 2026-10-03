@@ -145,6 +145,12 @@ const CONTACT_EMAIL = "nurtureyourjoy2026@gmail.com";
    ========================================================================== */
 const MERCH_ITEMS = [
   {
+    name: "\"Nurture Your Joy\" Graphic T-Shirt",
+    price: 26.99,
+    image: "https://images-api.printify.com/mockup/6aafde113dffc550ef05c094/101820/98445/nurture-your-joy-graphic-t-shirt.jpg",
+    url: "https://nurture-your-joy.printify.me/product/32182303"
+  },
+  {
     name: "Quail 'Nurture Your Joy' Graphic Hoodie",
     price: 46.25,
     image: "https://images-api.printify.com/mockup/6a918898d86146cef500f2ac/42229/98424/quail-nurture-your-joy-graphic-hoodie.jpg",
