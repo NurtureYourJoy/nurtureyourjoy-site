@@ -67,7 +67,7 @@ const COLLECTIONS = [
       "Made with real cedar, not substandard particle board."
     ],
     video: {
-      youtubeId: "-TFIqdvF_04",
+      youtubeId: "rzEfE3Qv92g",
       title: "Watch a Spanish Mission Get Built",
       caption: "From raw cedar to finished chapel — see the whole build, start to finish."
     },
