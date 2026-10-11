@@ -187,11 +187,11 @@
           const shipNote = item.shipping ? '<div class="ship-note">' + item.shipping + "</div>" : "";
           const thumbs = files.length > 1
             ? '<div class="thumbs">' + files.map(function(f, i){
-                return '<button class="thumb' + (i === 0 ? " is-active" : "") + '" data-i="' + i + '" aria-label="View ' + (i+1) + '"><img loading="lazy" src="' + f + '" alt=""></button>';
+                return '<button class="thumb' + (i === 0 ? " is-active" : "") + '" data-i="' + i + '" aria-label="View ' + (i+1) + '"><img loading="lazy" decoding="async" width="90" height="90" src="' + f.replace(/\/([^\/]+)$/, "/thumbs/$1") + '" alt=""></button>';
               }).join("") + "</div>"
             : "";
           piece.innerHTML =
-            '<div class="frame"><img loading="lazy" src="' + files[0] + '" alt="' + altText + '"></div>' +
+            '<div class="frame"><img loading="lazy" decoding="async" src="' + files[0] + '" alt="' + altText + '"></div>' +
             thumbs +
             '<div class="info"><h4>' + item.name + "</h4>" +
             '<div class="price' + (price ? "" : " tbd") + '">' + (price || "Price on request") + "</div>" +
