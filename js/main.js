@@ -123,7 +123,7 @@
       const card = el("div", "coll-card" + (c.status === "coming" ? " is-coming" : ""));
       if(c.cover){
         const img = el("img");
-        img.src = c.cover; img.alt = c.name; img.loading = "lazy";
+        img.src = c.cover.replace(/\.jpe?g$/i, ".webp"); img.alt = c.name; img.loading = "lazy";
         card.appendChild(img);
       }
       card.appendChild(el("div", "veil"));
@@ -181,7 +181,7 @@
           const piece = el("div", "piece");
           const price = fmtPrice(item.price);
           const files = (item.files && item.files.length ? item.files : [item.file]).map(function(f){
-            return "assets/products/" + c.id + "/" + f;
+            return "assets/products/" + c.id + "/" + f.replace(/\.jpe?g$/i, ".webp");
           });
           const altText = item.name + " birdhouse, " + c.name + " collection";
           const shipNote = item.shipping ? '<div class="ship-note">' + item.shipping + "</div>" : "";
