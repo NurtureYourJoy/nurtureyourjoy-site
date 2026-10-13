@@ -150,7 +150,7 @@ const COLLECTIONS = [
     cover: "assets/collections-hero/hero-birdhouse-kit.jpg",
     status: "live",
     items: [
-      { files: ["kit-photo.jpg"], name: "Birdhouse Kit", price: 20, shipping: "Plus $13 flat-rate shipping per kit (contiguous US only)", buyLink: null }
+      { files: ["kit-photo.jpg"], name: "Birdhouse Kit", price: 20, shipping: "Plus $13 flat-rate shipping per kit (contiguous US only)", buyLink: "https://buy.stripe.com/9B6aEQ0bH9nw6SG4Nobwk0J" }
     ]
   }
 ];
