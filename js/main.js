@@ -147,8 +147,8 @@
 
       const head = el("div", "section-head");
       const dimsLine = c.dimensions ? '<p class="dims">Approx. dimensions: ' + c.dimensions + "</p>" : "";
-      const baseNotes = typeof STANDARD_NOTES !== "undefined" ? STANDARD_NOTES.slice() : [];
-      if (c.handPainted !== false && typeof HAND_PAINTED_NOTE !== "undefined") {
+      const baseNotes = (c.standardNotes !== false && typeof STANDARD_NOTES !== "undefined") ? STANDARD_NOTES.slice() : [];
+      if (c.standardNotes !== false && c.handPainted !== false && typeof HAND_PAINTED_NOTE !== "undefined") {
         baseNotes.splice(baseNotes.length - 1, 0, HAND_PAINTED_NOTE);
       }
       const allNotes = (c.extraNotes || []).concat(baseNotes);

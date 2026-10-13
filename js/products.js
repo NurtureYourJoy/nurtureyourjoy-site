@@ -131,6 +131,27 @@ const COLLECTIONS = [
       { files: ["ai-red.jpg", "carryall-red1-front.jpg", "carryall-red1-side.jpg"], name: "Garden Carry-All, Red", price: 30, shipping: "Plus $25 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/4gMfZa1fL8jsfpcenYbwk0y" },
       { files: ["ai-yellow.jpg", "carryall-yellow1-front.jpg", "carryall-yellow1-side.jpg"], name: "Garden Carry-All, Yellow", price: 30, shipping: "Plus $25 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/eVqfZa5w1dDM2Cq1Bcbwk0z" }
     ]
+  },
+  {
+    id: "birdhouse-kit",
+    name: "The Birdhouse Kit",
+    tagline: "Paint it. Build it. Make it yours. A creative project for everyone, ages 10 to 110.",
+    standardNotes: false,
+    extraNotes: [
+      "What's in the box: a solid cedar birdhouse kit, all the hardware you need, a 12-color paint set, 2 paint brushes, and a step-by-step assembly video.",
+      "Ordering more than one item? Email us and we'll send you a combined shipping quote.",
+      "Please allow 2 weeks for shipping and handling."
+    ],
+    video: {
+      youtubeId: "GC-T5cOfBZg",
+      title: "Birdhouse Kit Assembly Instructions",
+      caption: "Follow along, step by step. Scan the QR code in the box to watch it any time."
+    },
+    cover: "assets/collections-hero/hero-birdhouse-kit.jpg",
+    status: "live",
+    items: [
+      { files: ["kit-photo.jpg"], name: "Birdhouse Kit", price: 20, shipping: "Plus $13 flat-rate shipping per kit (contiguous US only)", buyLink: null }
+    ]
   }
 ];
 
