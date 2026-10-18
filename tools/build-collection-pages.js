@@ -181,7 +181,7 @@ ${JSON.stringify(ld, null, 2)}
 
 ${headerHtml}
 
-<section class="section collection-section" style="padding-bottom:0;">
+<section class="section collection-section" style="padding-top:150px;padding-bottom:0;">
   <div class="wrap">
     <div class="section-head">
       <div class="txt">
