@@ -116,6 +116,7 @@
     if(e.key === "ArrowRight") lbStep(1);
   });
 
+  const COLL_PAGES = {"western":"western-birdhouses.html","adobe":"adobe-birdhouses.html","spanish-mission":"spanish-mission-birdhouses.html","whimsical":"whimsical-birdhouses.html","bird-feeders":"bird-feeders.html","garden-carry-alls":"garden-carry-alls.html","birdhouse-kit":"birdhouse-kit.html"};
   /* ---------- render: collections overview grid ---------- */
   const collGrid = document.querySelector("[data-collections-grid]");
   if(collGrid){
@@ -132,7 +133,7 @@
         (c.status === "coming" ? '<span class="soon">Coming soon</span>' : "") +
         "<h3>" + c.name + "</h3>" +
         "<p>" + c.tagline + "</p>" +
-        '<a href="#coll-' + c.id + '">' + (c.status === "coming" ? "Get notified" : "View collection") + "</a>";
+        '<a href="' + (COLL_PAGES[c.id] || ('#coll-' + c.id)) + '">' + (c.status === "coming" ? "Get notified" : "View collection") + "</a>";
       card.appendChild(body);
       collGrid.appendChild(card);
     });

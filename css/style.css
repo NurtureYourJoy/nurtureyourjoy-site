@@ -64,7 +64,7 @@ p{ margin:0 0 1em; }
 .section--dark h2, .section--dark h3{ color:#F6F1E3; }
 .section-head{ max-width:640px; margin-bottom:56px; }
 .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
-h2.section-title{ font-size:clamp(2.1rem,3.6vw,3rem); line-height:1.08; }
+h1.section-title,h2.section-title{ font-size:clamp(2.1rem,3.6vw,3rem); line-height:1.08; }
 .lede{ font-size:1.1rem; color:var(--ink-soft); max-width:56ch; }
 .section--dark .lede{ color:#CFC8B4; }
 .dims{
