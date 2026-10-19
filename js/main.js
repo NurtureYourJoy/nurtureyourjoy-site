@@ -191,14 +191,16 @@
                 return '<button class="thumb' + (i === 0 ? " is-active" : "") + '" data-i="' + i + '" aria-label="View ' + (i+1) + '"><img loading="lazy" decoding="async" width="90" height="90" src="' + f.replace(/\/([^\/]+)$/, "/thumbs/$1") + '" alt=""></button>';
               }).join("") + "</div>"
             : "";
+          if(item.soldOut) piece.classList.add("is-sold");
           piece.innerHTML =
-            '<div class="frame"><img loading="lazy" decoding="async" src="' + files[0] + '" alt="' + altText + '"></div>' +
+            '<div class="frame"><img loading="lazy" decoding="async" src="' + files[0] + '" alt="' + altText + '">' +
+            (item.soldOut ? '<span class="sold-badge">Sold out<br><small>More coming soon</small></span>' : "") + '</div>' +
             thumbs +
             '<div class="info"><h4>' + item.name + "</h4>" +
             '<div class="price' + (price ? "" : " tbd") + '">' + (price || "Price on request") + "</div>" +
             shipNote +
-            '<div class="actions"><a class="btn btn-small" href="' + buyHref(c.name, item) + '">' +
-            (item.buyLink ? "Buy Now" : "Inquire to Order") + "</a></div></div>";
+            (item.soldOut ? "" : '<div class="actions"><a class="btn btn-small" href="' + buyHref(c.name, item) + '">' +
+            (item.buyLink ? "Buy Now" : "Inquire to Order") + "</a></div>") + "</div>";
           gallery.appendChild(piece);
 
           const frameImg = piece.querySelector(".frame img");
@@ -216,6 +218,12 @@
           });
         });
         section.appendChild(gallery);
+        if(c.post){
+          const post = el("div", "coll-post");
+          post.innerHTML = '<img loading="lazy" decoding="async" src="' + c.post.image.replace(/\.jpe?g$/i, ".webp") + '" alt="' + c.post.title + '">' +
+            '<div class="coll-post-text"><h3>' + c.post.title + '</h3><p>' + c.post.text + '</p></div>';
+          section.appendChild(post);
+        }
       } else {
         const panel = el("div", "coming-panel");
         panel.innerHTML =

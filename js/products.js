@@ -48,14 +48,14 @@ const COLLECTIONS = [
     cover: "assets/collections-hero/hero-adobe.jpg",
     status: "live",
     items: [
-      { files: ["ai-oy.jpg", "adobe-oy1-front.jpg", "adobe-oy1-side.jpg"], name: "Adobe Pueblo, Orange & Yellow", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/5kQ8wIgaFdDM0uicfQbwk0j" },
-      { files: ["ai-rt.jpg", "adobe-rt1-front.jpg", "adobe-rt1-side.jpg"], name: "Adobe Pueblo, Red & Teal", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/14AcMYf6BfLU90OcfQbwk0k" },
-      { files: ["ai-yr.jpg", "adobe-yr1-front.jpg", "adobe-yr1-side.jpg"], name: "Adobe Pueblo, Yellow & Red", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/14AdR25w1dDM4Ky7ZAbwk0l" },
-      { files: ["ai-go.jpg", "adobe-go1-front.jpg"], name: "Adobe Pueblo, Green & Orange", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/dRm00c5w18js90ObbMbwk0m" },
-      { files: ["ai-ot.jpg", "adobe-ot1-front.jpg"], name: "Adobe Pueblo, Orange & Teal", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/28E3co6A5czIcd02Fgbwk0n" },
-      { files: ["ai-tr.jpg", "adobe-tr1-front.jpg"], name: "Adobe Pueblo, Teal & Red", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/14AaEQ2jP2Z83Gugw6bwk0o" },
-      { files: ["ai-yg.jpg", "adobe-yg1-front.jpg"], name: "Adobe Pueblo, Yellow & Green", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x200caQlfLU1ymenYbwk0p" },
-      { files: ["ai-ty.jpg", "adobe-ty1-front.jpg"], name: "Adobe Pueblo, Teal & Yellow", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x25kw7E91V4cd093Ebwk0q" }
+      { files: ["adobe-show-oy.jpg"], name: "Adobe Pueblo, Orange & Yellow", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/5kQ8wIgaFdDM0uicfQbwk0j" },
+      { files: ["adobe-rt1-front.jpg", "adobe-rt1-side.jpg"], name: "Adobe Pueblo, Red & Teal", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["adobe-yr1-front.jpg", "adobe-yr1-side.jpg"], name: "Adobe Pueblo, Yellow & Red", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["adobe-go1-front.jpg"], name: "Adobe Pueblo, Green & Orange", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["adobe-ot1-front.jpg"], name: "Adobe Pueblo, Orange & Teal", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["adobe-tr1-front.jpg"], name: "Adobe Pueblo, Teal & Red", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["adobe-show-yg.jpg"], name: "Adobe Pueblo, Yellow & Green", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x200caQlfLU1ymenYbwk0p" },
+      { files: ["adobe-ty1-front.jpg"], name: "Adobe Pueblo, Teal & Yellow", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true }
     ]
   },
   {
@@ -90,19 +90,13 @@ const COLLECTIONS = [
       "You may not live in a fairytale house but your birds can!"
     ],
     cover: "assets/collections-hero/hero-whimsical.jpg",
+    post: { image: "assets/products/whimsical/whimsical-workshop.jpg", title: "Coming soon: so many colors, so little time", text: "A brand-new Whimsical line-up is taking shape in the workshop right now. Here is a peek at the color choices." },
     status: "live",
     items: [
-      { files: ["ai-ruby-garden.jpg", "signature-1.jpg"], name: "Whimsical Cottage, Ruby", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/cNifZae2x43ccd00x8bwk05" },
-      { files: ["ai-indigo-citrus.jpg", "whimsical-bgo1-front.jpg", "whimsical-bgo1-side.jpg", "whimsical-bgo1-side2.jpg"], name: "Whimsical Cottage, Indigo & Citrus", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x214g8IddDM5OC2Fgbwk02" },
-      { files: ["ai-blue-red.jpg", "whimsical-br1-front.jpg", "whimsical-br1-side.jpg"], name: "Whimsical Cottage, Blue & Red", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/6oU9AM4rX9nwel8cfQbwk06" },
-      { files: ["ai-navy-red-v2.jpg", "whimsical-rbsw1-front.jpg", "whimsical-rbsw1-side.jpg", "whimsical-rbsw1-side2.jpg"], name: "Whimsical Cottage House, Navy & Red", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/3cI28k0bH7focd0gw6bwk07" },
-      { files: ["ai-forest-ochre.jpg", "whimsical-gy1-front.jpg", "whimsical-gy1-side.jpg"], name: "Whimsical Teardrop, Forest & Ochre", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/6oU8wIaQl2Z8a4S3Jkbwk09" },
-      { files: ["ai-red-lime.jpg", "whimsical-rg1-front.jpg", "whimsical-rg1-side.jpg"], name: "Whimsical Teardrop, Red & Lime Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/9B6cMY2jP7fogtgbbMbwk0a" },
-      { files: ["ai-orange-purple-v2.jpg", "whimsical-po1-front.jpg", "whimsical-po1-side.jpg", "whimsical-po1-side2.jpg"], name: "Whimsical Cottage House, Orange & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/9B65kwaQl57g7WK2Fgbwk0b" },
-      { files: ["ai-red-forest.jpg", "whimsical-rt1-front.jpg", "whimsical-rt1-side.jpg", "whimsical-rt1-side2.jpg"], name: "Whimsical Cottage, Red & Forest", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/28E9AM9Mh2Z8dh4a7Ibwk0c" },
-      { files: ["ai-navy-lime.jpg", "whimsical-pt1-front.jpg", "whimsical-pt1-side.jpg", "whimsical-pt1-side2.jpg"], name: "Whimsical Cottage, Burgundy & Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/6oUaEQ8Id57ga4SdjUbwk0d" },
-      { files: ["ai-shell-deep-forest.jpg", "whimsical-gb1-front.jpg", "whimsical-gb1-side.jpg"], name: "Whimsical Teardrop, Forest & Lime", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/5kQ9AM8Id1V490O3Jkbwk0e" },
-      { files: ["ai-green-purple.jpg", "whimsical-gp1-front.jpg", "whimsical-gp1-side.jpg"], name: "Whimsical Cottage, Green & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/fZucMYf6B43cel8enYbwk0A" }
+      { files: ["whimsical-show-op.jpg"], name: "Whimsical Cottage, Orange & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["whimsical-show-ic.jpg"], name: "Whimsical Cottage, Indigo & Citrus", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["whimsical-show-bp.jpg"], name: "Whimsical Cottage, Blue & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["whimsical-show-mg.jpg"], name: "Whimsical Cottage, Magenta & Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true }
     ]
   },
   {

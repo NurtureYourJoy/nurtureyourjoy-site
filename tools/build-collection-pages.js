@@ -96,12 +96,12 @@ COLLECTIONS.forEach(c => {
     const id = slugify(item.name);
     const label = item.name + (/birdhouse|feeder|carry|kit/i.test(item.name) ? "" : (c.id === "bird-feeders" || c.id === "garden-carry-alls" || c.id === "birdhouse-kit") ? "" : " birdhouse");
     return `
-      <div class="piece" id="${id}">
-        <div class="frame"><img loading="lazy" decoding="async" src="${imgPath(c, files[0])}" alt="${esc(label)}, handmade ${esc(c.name)} collection, Nurture Your Joy"></div>
+      <div class="piece${item.soldOut ? " is-sold" : ""}" id="${id}">
+        <div class="frame"><img loading="lazy" decoding="async" src="${imgPath(c, files[0])}" alt="${esc(label)}, handmade ${esc(c.name)} collection, Nurture Your Joy">${item.soldOut ? '<span class="sold-badge">Sold out<br><small>More coming soon</small></span>' : ""}</div>
         <div class="info"><h3 style="font-size:1.25rem;margin:0 0 6px;">${esc(item.name)}</h3>
           <div class="price">$${item.price.toFixed(0)}</div>
           ${item.shipping ? `<div class="ship-note">${esc(item.shipping)}</div>` : ""}
-          <div class="actions"><a class="btn btn-small" href="${item.buyLink}">Buy Now</a></div>
+          ${item.soldOut ? "" : `<div class="actions"><a class="btn btn-small" href="${item.buyLink}">Buy Now</a></div>`}
         </div>
       </div>`;
   }).join("");
@@ -129,7 +129,7 @@ COLLECTIONS.forEach(c => {
           "url": url + "#" + slugify(it.name),
           "priceCurrency": "USD",
           "price": it.price.toFixed(2),
-          "availability": "https://schema.org/InStock",
+          "availability": it.soldOut ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
           "itemCondition": "https://schema.org/NewCondition",
           ...(shipAmt(it) !== null ? {
             "shippingDetails": {
@@ -148,6 +148,10 @@ COLLECTIONS.forEach(c => {
     <div class="video-frame"><iframe src="https://www.youtube.com/embed/${c.video.youtubeId}" title="${esc(c.video.title || c.name)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
     <div class="video-caption"><h3>${esc(c.video.title || "")}</h3><p>${esc(c.video.caption || "")}</p></div>
   </div>` : "";
+
+  const post = c.post ? `
+  <div class="coll-post"><img loading="lazy" decoding="async" src="${c.post.image.replace(/\.jpe?g$/i, ".webp")}" alt="${esc(c.post.title)}">
+    <div class="coll-post-text"><h3>${esc(c.post.title)}</h3><p>${esc(c.post.text)}</p></div></div>` : "";
 
   const others = Object.keys(SEO).filter(k => k !== c.id).map(k =>
     `<a href="${SEO[k].slug}.html">${esc(SEO[k].h1)}</a>`).join(" &middot; ");
@@ -196,6 +200,7 @@ ${headerHtml}
   ${video}
   <div class="gallery">${pieces}
   </div>
+  ${post}
 </section>
 
 <section class="section section--alt">
