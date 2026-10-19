@@ -101,7 +101,7 @@ COLLECTIONS.forEach(c => {
         <div class="info"><h3 style="font-size:1.25rem;margin:0 0 6px;">${esc(item.name)}</h3>
           <div class="price">$${item.price.toFixed(0)}</div>
           ${item.shipping ? `<div class="ship-note">${esc(item.shipping)}</div>` : ""}
-          ${item.soldOut ? "" : `<div class="actions"><a class="btn btn-small" href="${item.buyLink}">Buy Now</a></div>`}
+          ${item.soldOut ? "" : `<div class="actions"><a class="btn btn-small" href="${item.buyLink || ("mailto:nurtureyourjoy2026@gmail.com?subject=" + encodeURIComponent("Order inquiry: " + item.name))}">${item.buyLink ? "Buy Now" : "Inquire to Order"}</a></div>`}
         </div>
       </div>`;
   }).join("");

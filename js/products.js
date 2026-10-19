@@ -93,10 +93,10 @@ const COLLECTIONS = [
     post: { image: "assets/products/whimsical/whimsical-workshop.jpg", title: "Coming soon: so many colors, so little time", text: "A brand-new Whimsical line-up is taking shape in the workshop right now. Here is a peek at the color choices." },
     status: "live",
     items: [
-      { files: ["whimsical-show-op.jpg"], name: "Whimsical Cottage, Orange & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
-      { files: ["whimsical-show-ic.jpg"], name: "Whimsical Cottage, Indigo & Citrus", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
-      { files: ["whimsical-show-bp.jpg"], name: "Whimsical Cottage, Blue & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
-      { files: ["whimsical-show-mg.jpg"], name: "Whimsical Cottage, Magenta & Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true }
+      { files: ["whimsical-show-op.jpg"], name: "Whimsical Cottage, Orange & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
+      { files: ["whimsical-show-ic.jpg"], name: "Whimsical Cottage, Indigo & Citrus", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
+      { files: ["whimsical-show-bp.jpg"], name: "Whimsical Cottage, Blue & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
+      { files: ["whimsical-show-mg.jpg"], name: "Whimsical Cottage, Magenta & Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null }
     ]
   },
   {
