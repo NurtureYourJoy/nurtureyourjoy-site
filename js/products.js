@@ -90,6 +90,11 @@ const COLLECTIONS = [
       "You may not live in a fairytale house but your birds can!"
     ],
     cover: "assets/collections-hero/hero-whimsical.jpg",
+    video: {
+      youtubeId: "ADvxWVesYXI",
+      title: "The Tiny Details Nobody Notices",
+      caption: "Window trim and tiny flower planters for a Whimsical birdhouse, a small part of the build but a lot of steps."
+    },
     post: { image: "assets/products/whimsical/whimsical-workshop.jpg", title: "Coming soon: so many colors, so little time", text: "A brand-new Whimsical line-up is taking shape in the workshop right now. Here is a peek at the color choices." },
     status: "live",
     items: [
