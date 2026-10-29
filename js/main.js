@@ -255,4 +255,18 @@
   const yearEl = document.querySelector("[data-year]");
   if(yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---------- analytics: track Buy Now / Inquire clicks (Stripe checkout is off-site) ---------- */
+  document.addEventListener("click", function(e){
+    const a = e.target.closest && e.target.closest("a[href]");
+    if(!a || typeof gtag !== "function") return;
+    const href = a.getAttribute("href") || "";
+    const label = (a.closest(".piece") && a.closest(".piece").querySelector("h3,h4,.name")) ;
+    const item = (label ? label.textContent : (a.getAttribute("aria-label") || document.title)).trim().slice(0,100);
+    if(href.indexOf("buy.stripe.com") > -1){
+      gtag("event", "buy_now_click", {item_name: item, page_title: document.title, link_url: href});
+    } else if(href.indexOf("mailto:") === 0 && /inquire/i.test(a.textContent)){
+      gtag("event", "inquire_click", {item_name: item, page_title: document.title});
+    }
+  });
+
 })();
