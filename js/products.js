@@ -142,7 +142,7 @@ const COLLECTIONS = [
       "Please allow 2 weeks for shipping and handling."
     ],
     video: {
-      youtubeId: "GC-T5cOfBZg",
+      youtubeId: "4BCoJHyGFF4",
       title: "Birdhouse Kit Assembly Instructions",
       caption: "Follow along, step by step. Scan the QR code in the box to watch it any time."
     },
