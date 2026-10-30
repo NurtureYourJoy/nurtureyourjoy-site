@@ -17,6 +17,8 @@ const STANDARD_NOTES = [
   "Colors may vary slightly from the photos shown.",
   "Please allow 2 weeks for shipping and handling."
 ];
+/* Last line under every collection (raw HTML). */
+const SHOW_NOTE = 'Or come see it in person at our <a href="craft-shows.html">next show</a>.';
 /* Appended after the color-variance note, unless the collection sets handPainted: false. */
 const HAND_PAINTED_NOTE = "Every piece is hand-painted.";
 

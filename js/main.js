@@ -195,6 +195,7 @@
         baseNotes.splice(baseNotes.length - 1, 0, HAND_PAINTED_NOTE);
       }
       const allNotes = (c.extraNotes || []).concat(baseNotes);
+      if (typeof SHOW_NOTE !== "undefined") allNotes.push(SHOW_NOTE);
       const notesLines = allNotes.length
         ? '<ul class="notes">' + allNotes.map(function(n){ return "<li>" + n + "</li>"; }).join("") + "</ul>"
         : "";

@@ -8,8 +8,8 @@ const SITE = "https://nurtureyourjoy.net";
 
 const ctx = {}; vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(ROOT + "/js/products.js", "utf8") +
-  ";this.C=COLLECTIONS;this.N=STANDARD_NOTES;this.H=HAND_PAINTED_NOTE;", ctx);
-const COLLECTIONS = ctx.C, STD = ctx.N, HAND = ctx.H;
+  ";this.C=COLLECTIONS;this.N=STANDARD_NOTES;this.H=HAND_PAINTED_NOTE;this.S=SHOW_NOTE;", ctx);
+const COLLECTIONS = ctx.C, STD = ctx.N, HAND = ctx.H, SHOW = ctx.S;
 
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -105,6 +105,8 @@ COLLECTIONS.forEach(c => {
   const base = (c.standardNotes !== false) ? STD.slice() : [];
   if (c.standardNotes !== false && c.handPainted !== false) base.splice(base.length - 1, 0, HAND);
   const notes = (c.extraNotes || []).concat(base);
+  const noteHtml = notes.map(n => esc(n));
+  noteHtml.push(SHOW);
 
   const pieces = c.items.map(item => {
     const files = item.files;
@@ -214,7 +216,7 @@ ${headerHtml}
         <h1 class="section-title">${esc(s.h1)}</h1>
         <p class="lede">${esc(s.intro)}</p>
         ${c.dimensions ? `<p class="dims">Approx. dimensions: ${esc(c.dimensions)}</p>` : ""}
-        ${notes.length ? `<ul class="notes">${notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}
+        ${noteHtml.length ? `<ul class="notes">${noteHtml.map(n => `<li>${n}</li>`).join("")}</ul>` : ""}
       </div>
     </div>
   </div>
