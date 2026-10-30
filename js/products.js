@@ -115,17 +115,11 @@ const COLLECTIONS = [
     cover: "assets/collections-hero/hero-bird-feeders.jpg",
     status: "live",
     items: [
-      {
-        files: ["feeder-whimsical-mt1.jpg", "feeder-whimsical-mt2.jpg", "feeder-whimsical-bt1.jpg", "feeder-whimsical-bt2.jpg"],
-        name: "Whimsical Tray Feeder", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)",
-        optionLabel: "Choose your colors",
-        options: [
-          { label: "Blue & Teal", buyLink: "https://buy.stripe.com/dRm8wIbUp0R07WKbbMbwk0Q" },
-          { label: "Magenta & Teal", buyLink: "https://buy.stripe.com/fZu7sE9MhgPYel8fs2bwk0R" },
-          { label: "Blue & Natural", buyLink: "https://buy.stripe.com/28E14gbUp57g7WK6Vwbwk0S" },
-          { label: "Burgundy & Natural", buyLink: "https://buy.stripe.com/7sY9AMcYt57ga4Sgw6bwk0T" }
-        ]
-      }
+      { files: ["feeder-whimsical-mt1.jpg", "feeder-whimsical-mt2.jpg"], name: "Whimsical Tray Feeder, Magenta & Teal", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/fZu7sE9MhgPYel8fs2bwk0R" },
+      { files: ["feeder-whimsical-bt1.jpg", "feeder-whimsical-bt2.jpg"], name: "Whimsical Tray Feeder, Blue & Teal", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/dRm8wIbUp0R07WKbbMbwk0Q" },
+      /* Stripe links already made for the two coming-soon colors: Blue & Natural https://buy.stripe.com/28E14gbUp57g7WK6Vwbwk0S , Burgundy & Natural https://buy.stripe.com/7sY9AMcYt57ga4Sgw6bwk0T */
+      { files: ["photo-coming-soon.jpg"], name: "Whimsical Tray Feeder, Blue & Natural", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", comingSoon: true },
+      { files: ["photo-coming-soon.jpg"], name: "Whimsical Tray Feeder, Burgundy & Natural", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", comingSoon: true }
     ]
   },
   {
