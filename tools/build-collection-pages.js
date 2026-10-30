@@ -46,9 +46,9 @@ const SEO = {
   "bird-feeders": {
     slug: "bird-feeders",
     title: "Handmade Hanging Tray Bird Feeders with Birdhouse Centerpiece | Nurture Your Joy",
-    desc: "Handmade hanging tray bird feeders with a hand-painted birdhouse centerpiece, built to match our birdhouses. $65 each, made in Arizona.",
+    desc: "Handmade hanging tray bird feeders with a hand-painted birdhouse centerpiece, built to match our Whimsical birdhouses. $65 each, made in Arizona.",
     h1: "Handmade Bird Feeders",
-    intro: "Hanging tray feeders topped with a hand-painted birdhouse centerpiece, built to match the houses. These are the same feeders you see in our Northern Arizona backyard bird videos."
+    intro: "Hanging tray feeders topped with a hand-painted birdhouse centerpiece, built to match the houses."
   },
   "garden-carry-alls": {
     slug: "garden-carry-alls",

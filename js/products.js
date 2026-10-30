@@ -110,14 +110,11 @@ const COLLECTIONS = [
   {
     id: "bird-feeders",
     name: "Bird Feeders",
-    tagline: "Hanging tray feeders with a hand-painted birdhouse centerpiece, built to match the houses.",
+    tagline: "Hanging tray feeders topped with a hand-painted Whimsical birdhouse, in four color combinations.",
     dimensions: "11.25\" tall x 11\" deep x 12\" wide",
     cover: "assets/collections-hero/hero-bird-feeders.jpg",
     status: "live",
     items: [
-      { files: ["ai-green-teal-v2.jpg", "feeder-gt1-front.jpg", "feeder-gt1-back.jpg", "feeder-gt1-side.jpg", "feeder-gt1-side2.jpg"], name: "Tray Feeder, Green & Teal", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/00w7sE9MhdDM4Ky5Rsbwk0t" },
-      { files: ["ai-rg.jpg", "feeder-rg1-front.jpg", "feeder-rg1-side.jpg"], name: "Tray Feeder, Red & Green", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/aFa3co6A5bvE1ym6Vwbwk0u" },
-      { files: ["ai-to.jpg", "feeder-to1-front.jpg", "feeder-to1-back.jpg", "feeder-to1-side.jpg", "feeder-to1-side2.jpg"], name: "Tray Feeder, Teal & Orange", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/eVq5kwcYt43cb8W93Ebwk0v" },
       {
         files: ["feeder-whimsical-mt1.jpg", "feeder-whimsical-mt2.jpg", "feeder-whimsical-bt1.jpg", "feeder-whimsical-bt2.jpg"],
         name: "Whimsical Tray Feeder", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)",
