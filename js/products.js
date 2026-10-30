@@ -171,7 +171,7 @@ const COLLECTIONS = [
     id: "cedar-boxes",
     name: "Cedar Boxes",
     tagline: "Locally handcrafted keepsake boxes, each one cut from a real cedar log.",
-    dimensions: "3\" deep; height and width vary with each log",
+    dimensions: "approximately 3\" deep x 3\" tall x 3\" wide; exact size varies with each log",
     standardNotes: false,
     extraNotes: [
       "No two boxes are alike. Each one is shaped by the cedar log it came from, so the height and width vary, and the grain and color are all one of a kind.",
@@ -185,7 +185,7 @@ const COLLECTIONS = [
       {
         files: ["cedar-boxes-display1.jpg", "cedar-boxes-display2.jpg"],
         name: "Cedar Keepsake Box", price: 25, shipping: "Plus $8 flat-rate shipping (contiguous US only)",
-        blurb: "Each keepsake box has a little drawer with a wooden pull and is 3\" deep. Because every cedar log is different, the height and width vary, and you'll receive the box we choose for you.",
+        blurb: "Each bandsaw box has a little drawer with a wooden pull and measures approximately 3\" deep, 3\" tall and 3\" wide. Because every cedar log is different, the exact size and shape vary slightly, and you'll receive the box we choose for you. Just as no two trees are alike, there will never be another box like yours anywhere in the world. It's a truly unique keepsake, hard to find in a world of mass production.",
         buyLink: "https://buy.stripe.com/bJe8wI8Id7foa4S1Bcbwk0Z"
       }
     ]
