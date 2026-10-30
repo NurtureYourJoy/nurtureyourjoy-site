@@ -59,7 +59,7 @@ const SEO = {
   },
   "cedar-boxes": {
     slug: "cedar-boxes",
-    title: "Handmade Cedar Bandsaw Boxes, Each One Cut from a Real Cedar Log | Nurture Your Joy",
+    title: "Handmade Cedar Keepsake Boxes, Each One Cut from a Real Cedar Log | Nurture Your Joy",
     desc: "Locally handcrafted cedar bandsaw boxes, each cut from a real cedar log with a little drawer. No two are alike. $25 each, made in Arizona. A great gift.",
     h1: "Cedar Boxes",
     intro: "Locally handcrafted keepsakes, each one cut from a real cedar log and fitted with a little drawer. Every box is different, so you get the one we pick for you."

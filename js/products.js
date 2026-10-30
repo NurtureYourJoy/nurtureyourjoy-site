@@ -185,7 +185,7 @@ const COLLECTIONS = [
       {
         files: ["cedar-boxes-display1.jpg", "cedar-boxes-display2.jpg"],
         name: "Cedar Keepsake Box", price: 25, shipping: "Plus $8 flat-rate shipping (contiguous US only)",
-        blurb: "Each bandsaw box has a little drawer with a wooden pull and measures approximately 3\" deep, 3\" tall and 3\" wide. Because every cedar log is different, the exact size and shape vary slightly, and you'll receive the box we choose for you. Just as no two trees are alike, there will never be another box like yours anywhere in the world. It's a truly unique keepsake, hard to find in a world of mass production.",
+        blurb: "Each keepsake box has a little drawer with a wooden pull and measures approximately 3\" deep, 3\" tall and 3\" wide. Because every cedar log is different, the exact size and shape vary slightly, and you'll receive the box we choose for you. Just as no two trees are alike, there will never be another box like yours anywhere in the world. It's a truly unique keepsake, hard to find in a world of mass production.",
         buyLink: "https://buy.stripe.com/bJe8wI8Id7foa4S1Bcbwk0Z"
       }
     ]
