@@ -97,11 +97,11 @@ const COLLECTIONS = [
     },
     status: "live",
     items: [
-      { files: ["wh-mlg1.jpg", "wh-mlg2.jpg"], name: "Whimsical Cottage, Magenta & Lime Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
-      { files: ["wh-pt1.jpg", "wh-pt2.jpg"], name: "Whimsical Cottage, Purple & Teal", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
-      { files: ["wh-bt1.jpg", "wh-bt2.jpg"], name: "Whimsical Cottage, Blue & Teal", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
-      { files: ["wh-blg1.jpg", "wh-blg2.jpg"], name: "Whimsical Teardrop, Blue & Lime Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
-      { files: ["wh-op1.jpg"], name: "Whimsical Cottage, Orange & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
+      { files: ["wh-mlg1.jpg", "wh-mlg2.jpg"], name: "Whimsical Cottage, Magenta & Lime Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/eVq7sEe2x43c5OC5Rsbwk0U" },
+      { files: ["wh-pt1.jpg", "wh-pt2.jpg"], name: "Whimsical Cottage, Purple & Teal", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x2bIUf6B43c2Cq6Vwbwk0V" },
+      { files: ["wh-bt1.jpg", "wh-bt2.jpg"], name: "Whimsical Cottage, Blue & Teal", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/7sY5kw7E9gPY7WKdjUbwk0W" },
+      { files: ["wh-blg1.jpg", "wh-blg2.jpg"], name: "Whimsical Teardrop, Blue & Lime Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x2aEQ2jP6bkcd05Rsbwk0X" },
+      { files: ["wh-op1.jpg"], name: "Whimsical Cottage, Orange & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/9B63coe2x2Z86SG4Nobwk0Y" },
       { files: ["photo-coming-soon.jpg"], name: "Whimsical Cottage, Blue & Red", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", comingSoon: true },
       { files: ["photo-coming-soon.jpg"], name: "Whimsical Cottage, Blue & Natural", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", comingSoon: true },
       { files: ["photo-coming-soon.jpg"], name: "Whimsical Cottage, Burgundy & Natural", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", comingSoon: true }
@@ -123,10 +123,10 @@ const COLLECTIONS = [
         name: "Whimsical Tray Feeder", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)",
         optionLabel: "Choose your colors",
         options: [
-          { label: "Blue & Teal", buyLink: null },
-          { label: "Magenta & Teal", buyLink: null },
-          { label: "Blue & Natural", buyLink: null },
-          { label: "Burgundy & Natural", buyLink: null }
+          { label: "Blue & Teal", buyLink: "https://buy.stripe.com/dRm8wIbUp0R07WKbbMbwk0Q" },
+          { label: "Magenta & Teal", buyLink: "https://buy.stripe.com/fZu7sE9MhgPYel8fs2bwk0R" },
+          { label: "Blue & Natural", buyLink: "https://buy.stripe.com/28E14gbUp57g7WK6Vwbwk0S" },
+          { label: "Burgundy & Natural", buyLink: "https://buy.stripe.com/7sY9AMcYt57ga4Sgw6bwk0T" }
         ]
       }
     ]
@@ -149,7 +149,7 @@ const COLLECTIONS = [
           { label: "Teal", buyLink: "https://buy.stripe.com/aFa7sE3nT8jsa4S5Rsbwk0x" },
           { label: "Red", buyLink: "https://buy.stripe.com/4gMfZa1fL8jsfpcenYbwk0y" },
           { label: "Yellow", buyLink: "https://buy.stripe.com/eVqfZa5w1dDM2Cq1Bcbwk0z" },
-          { label: "Blue", buyLink: null }
+          { label: "Blue", buyLink: "https://buy.stripe.com/cNiaEQ1fL9nw4Ky2Fgbwk0P" }
         ]
       },
       {
@@ -158,11 +158,11 @@ const COLLECTIONS = [
         blurb: "A hand-painted dust pan made with a real Arizona license plate. It's handy in the shop, the garage or the garden, and makes a great gift.",
         optionLabel: "Choose your color",
         options: [
-          { label: "Purple", buyLink: null },
-          { label: "Teal", buyLink: null },
-          { label: "Red", buyLink: null },
-          { label: "Yellow", buyLink: null },
-          { label: "Blue", buyLink: null }
+          { label: "Purple", buyLink: "https://buy.stripe.com/28E9AM3nT7fo5OC93Ebwk0K" },
+          { label: "Teal", buyLink: "https://buy.stripe.com/00w00c3nTarA90OcfQbwk0L" },
+          { label: "Red", buyLink: "https://buy.stripe.com/aFa7sEaQl6bkcd04Nobwk0N" },
+          { label: "Yellow", buyLink: "https://buy.stripe.com/3cI9AM0bH8jsa4SbbMbwk0M" },
+          { label: "Blue", buyLink: "https://buy.stripe.com/9B64gs0bH43c0uicfQbwk0O" }
         ]
       }
     ]
@@ -186,7 +186,7 @@ const COLLECTIONS = [
         files: ["cedar-boxes-display1.jpg", "cedar-boxes-display2.jpg"],
         name: "Cedar Keepsake Box", price: 25, shipping: "Plus $8 flat-rate shipping (contiguous US only)",
         blurb: "Each keepsake box has a little drawer with a wooden pull and is 3\" deep. Because every cedar log is different, the height and width vary, and you'll receive the box we choose for you.",
-        buyLink: null
+        buyLink: "https://buy.stripe.com/bJe8wI8Id7foa4S1Bcbwk0Z"
       }
     ]
   },
