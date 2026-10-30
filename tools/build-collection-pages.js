@@ -62,6 +62,7 @@ const SEO = {
     title: "Handmade Cedar Keepsake Boxes, Each One Cut from a Real Cedar Log | Nurture Your Joy",
     desc: "Locally handcrafted cedar bandsaw boxes, each cut from a real cedar log with a little drawer. No two are alike. $25 each, made in Arizona. A great gift.",
     h1: "Cedar Boxes",
+    keywords: "bandsaw box, cedar bandsaw box, handmade bandsaw box, bandsaw boxes, cedar keepsake box, wooden keepsake box, jewelry box, trinket box, handmade cedar box, Arizona",
     intro: "Locally handcrafted keepsakes, each one cut from a real cedar log and fitted with a little drawer. Every box is different, so you get the one we pick for you."
   },
   "birdhouse-kit": {
@@ -111,7 +112,7 @@ COLLECTIONS.forEach(c => {
     const label = item.name + (/birdhouse|feeder|carry|kit/i.test(item.name) ? "" : /^(bird-feeders|garden-carry-alls|birdhouse-kit|cedar-boxes)$/.test(c.id) ? "" : " birdhouse");
     return `
       <div class="piece${item.soldOut ? " is-sold" : ""}${item.comingSoon ? " is-soon" : ""}" id="${id}"${files.length > 1 ? ` data-files="${files.map(f => imgPath(c, f)).join("|")}"` : ""}>
-        <div class="frame"><img loading="lazy" decoding="async" src="${imgPath(c, files[0])}" alt="${esc(label)}, handmade ${esc(c.name)} collection, Nurture Your Joy">${item.soldOut ? '<span class="sold-badge">Sold out<br><small>More coming soon</small></span>' : ""}</div>${files.length > 1 ? `
+        <div class="frame"><img loading="lazy" decoding="async" src="${imgPath(c, files[0])}" alt="${esc(label)}, handmade ${esc(c.name)} collection${s.keywords ? ", also known as a bandsaw box" : ""}, Nurture Your Joy">${item.soldOut ? '<span class="sold-badge">Sold out<br><small>More coming soon</small></span>' : ""}</div>${files.length > 1 ? `
         <div class="thumbs">${files.map((f, i) => `<button class="thumb${i === 0 ? " is-active" : ""}" data-i="${i}" aria-label="View ${i + 1}"><img loading="lazy" decoding="async" width="90" height="90" src="${imgPath(c, f).replace(/\/([^\/]+)$/, "/thumbs/$1")}" alt=""></button>`).join("")}</div>` : ""}
         <div class="info"><h3 style="font-size:1.25rem;margin:0 0 6px;">${esc(item.name)}</h3>
           <div class="price">$${item.price.toFixed(0)}</div>
@@ -142,6 +143,7 @@ COLLECTIONS.forEach(c => {
         "image": it.files.map(f => imgAbs(c, f)),
         "description": s.desc,
         "brand": { "@type": "Brand", "name": "Nurture Your Joy" },
+        ...(s.keywords ? { "keywords": s.keywords } : {}),
         "offers": {
           "@type": "Offer",
           "url": url + "#" + slugify(it.name),
@@ -183,6 +185,7 @@ COLLECTIONS.forEach(c => {
 <meta name="description" content="${esc(s.desc)}">
 <link rel="canonical" href="${url}">
 <meta name="robots" content="index, follow, max-image-preview:large">
+${s.keywords ? `<meta name="keywords" content="${esc(s.keywords)}">` : ""}
 <link rel="icon" href="assets/brand/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
