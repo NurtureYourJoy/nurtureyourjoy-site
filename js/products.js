@@ -22,6 +22,29 @@ const HAND_PAINTED_NOTE = "Every piece is hand-painted.";
 
 const COLLECTIONS = [
   {
+    id: "cedar-boxes",
+    name: "Cedar Boxes",
+    tagline: "Locally handcrafted keepsake boxes, each one cut from a real cedar log.",
+    dimensions: "approximately 3\" deep x 3\" tall x 3\" wide; exact size varies with each log",
+    standardNotes: false,
+    extraNotes: [
+      "No two boxes are alike. Each one is shaped by the cedar log it came from, so the height and width vary, and the grain and color are all one of a kind.",
+      "You can't pick a specific box. Each order is a surprise, and we'll choose a beautiful one and send it to you.",
+      "These make great gifts.",
+      "Please allow 2 weeks for shipping and handling."
+    ],
+    cover: "assets/collections-hero/hero-cedar-boxes.jpg",
+    status: "live",
+    items: [
+      {
+        files: ["cedar-boxes-display1.jpg", "cedar-boxes-display2.jpg"],
+        name: "Cedar Keepsake Box", price: 25, shipping: "Plus $8 flat-rate shipping (contiguous US only)",
+        blurb: "Each keepsake box has a little drawer with a wooden pull and measures approximately 3\" deep, 3\" tall and 3\" wide. Because every cedar log is different, the exact size and shape vary slightly, and you'll receive the box we choose for you. Just as no two trees are alike, there will never be another box like yours anywhere in the world. It's a truly unique keepsake, hard to find in a world of mass production.",
+        buyLink: "https://buy.stripe.com/bJe8wI8Id7foa4S1Bcbwk0Z"
+      }
+    ]
+  },
+  {
     id: "western",
     name: "The Western Collection",
     tagline: "Saloons, sheriffs and general stores, whittled down to birdhouse scale.",
@@ -38,24 +61,6 @@ const COLLECTIONS = [
       { files: ["western-sheriff-front.jpg", "western-sheriff-front2.jpg", "western-sheriff-side.jpg"], name: "Sheriff", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/7sYcMYcYtbvEfpc2Fgbwk0G" },
       { files: ["western-jail-front.jpg", "western-jail-front2.jpg", "western-jail-side.jpg"], name: "Jail", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/5kQ28k5w19nwcd07ZAbwk0H" },
       { files: ["western-hotel-front.jpg"], name: "Hotel", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/bJe9AM4rXeHQ4KydjUbwk0I" }
-    ]
-  },
-  {
-    id: "adobe",
-    name: "Adobe",
-    tagline: "Stepped pueblo silhouettes with hand-set viga posts, straight from the high desert.",
-    dimensions: "10.5\" tall x 9\" deep x 5.5\" wide",
-    cover: "assets/collections-hero/hero-adobe.jpg",
-    status: "live",
-    items: [
-      { files: ["adobe-show-oy.jpg"], name: "Adobe Pueblo, Orange & Yellow", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/5kQ8wIgaFdDM0uicfQbwk0j" },
-      { files: ["adobe-rt1-front.jpg", "adobe-rt1-side.jpg"], name: "Adobe Pueblo, Red & Teal", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
-      { files: ["adobe-yr1-front.jpg", "adobe-yr1-side.jpg"], name: "Adobe Pueblo, Yellow & Red", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
-      { files: ["adobe-go1-front.jpg"], name: "Adobe Pueblo, Green & Orange", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
-      { files: ["adobe-ot1-front.jpg"], name: "Adobe Pueblo, Orange & Teal", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
-      { files: ["adobe-tr1-front.jpg"], name: "Adobe Pueblo, Teal & Red", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
-      { files: ["adobe-show-yg.jpg"], name: "Adobe Pueblo, Yellow & Green", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x200caQlfLU1ymenYbwk0p" },
-      { files: ["adobe-ty1-front.jpg"], name: "Adobe Pueblo, Teal & Yellow", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true }
     ]
   },
   {
@@ -108,6 +113,24 @@ const COLLECTIONS = [
     ]
   },
   {
+    id: "adobe",
+    name: "Adobe",
+    tagline: "Stepped pueblo silhouettes with hand-set viga posts, straight from the high desert.",
+    dimensions: "10.5\" tall x 9\" deep x 5.5\" wide",
+    cover: "assets/collections-hero/hero-adobe.jpg",
+    status: "live",
+    items: [
+      { files: ["adobe-show-oy.jpg"], name: "Adobe Pueblo, Orange & Yellow", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/5kQ8wIgaFdDM0uicfQbwk0j" },
+      { files: ["adobe-rt1-front.jpg", "adobe-rt1-side.jpg"], name: "Adobe Pueblo, Red & Teal", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["adobe-yr1-front.jpg", "adobe-yr1-side.jpg"], name: "Adobe Pueblo, Yellow & Red", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["adobe-go1-front.jpg"], name: "Adobe Pueblo, Green & Orange", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["adobe-ot1-front.jpg"], name: "Adobe Pueblo, Orange & Teal", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["adobe-tr1-front.jpg"], name: "Adobe Pueblo, Teal & Red", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
+      { files: ["adobe-show-yg.jpg"], name: "Adobe Pueblo, Yellow & Green", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x200caQlfLU1ymenYbwk0p" },
+      { files: ["adobe-ty1-front.jpg"], name: "Adobe Pueblo, Teal & Yellow", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true }
+    ]
+  },
+  {
     id: "bird-feeders",
     name: "Bird Feeders",
     tagline: "Hanging tray feeders topped with a hand-painted Whimsical birdhouse, in four color combinations.",
@@ -136,7 +159,7 @@ const COLLECTIONS = [
     status: "live",
     items: [
       {
-        files: ["carryalls-dustpans-group.jpg", "carryall-purple1-front.jpg", "carryall-teal1-front.jpg", "carryall-red1-front.jpg", "carryall-yellow1-front.jpg", "carryall-purple1-side.jpg", "ai-purple.jpg", "ai-teal.jpg", "ai-red.jpg", "ai-yellow.jpg"],
+        files: ["carryalls-dustpans-group.jpg", "ai-purple.jpg", "ai-teal.jpg", "ai-red.jpg", "ai-yellow.jpg"],
         name: "Garden Carry-All", price: 30, shipping: "Plus $17 flat-rate shipping (contiguous US only)",
         blurb: "A sturdy hand-painted tote with a rustic branch handle and a real Arizona license plate on the front. Perfect for tools, cut flowers and garden finds, and a great gift for the gardener in your life.",
         optionLabel: "Choose your color",
@@ -160,29 +183,6 @@ const COLLECTIONS = [
           { label: "Yellow", buyLink: "https://buy.stripe.com/3cI9AM0bH8jsa4SbbMbwk0M" },
           { label: "Blue", buyLink: "https://buy.stripe.com/9B64gs0bH43c0uicfQbwk0O" }
         ]
-      }
-    ]
-  },
-  {
-    id: "cedar-boxes",
-    name: "Cedar Boxes",
-    tagline: "Locally handcrafted keepsake boxes, each one cut from a real cedar log.",
-    dimensions: "approximately 3\" deep x 3\" tall x 3\" wide; exact size varies with each log",
-    standardNotes: false,
-    extraNotes: [
-      "No two boxes are alike. Each one is shaped by the cedar log it came from, so the height and width vary, and the grain and color are all one of a kind.",
-      "You can't pick a specific box. Each order is a surprise, and we'll choose a beautiful one and send it to you.",
-      "These make great gifts.",
-      "Please allow 2 weeks for shipping and handling."
-    ],
-    cover: "assets/collections-hero/hero-cedar-boxes.jpg",
-    status: "live",
-    items: [
-      {
-        files: ["cedar-boxes-display1.jpg", "cedar-boxes-display2.jpg"],
-        name: "Cedar Keepsake Box", price: 25, shipping: "Plus $8 flat-rate shipping (contiguous US only)",
-        blurb: "Each keepsake box has a little drawer with a wooden pull and measures approximately 3\" deep, 3\" tall and 3\" wide. Because every cedar log is different, the exact size and shape vary slightly, and you'll receive the box we choose for you. Just as no two trees are alike, there will never be another box like yours anywhere in the world. It's a truly unique keepsake, hard to find in a world of mass production.",
-        buyLink: "https://buy.stripe.com/bJe8wI8Id7foa4S1Bcbwk0Z"
       }
     ]
   },
