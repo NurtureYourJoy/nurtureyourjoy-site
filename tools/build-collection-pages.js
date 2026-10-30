@@ -116,7 +116,7 @@ COLLECTIONS.forEach(c => {
         <div class="thumbs">${files.map((f, i) => `<button class="thumb${i === 0 ? " is-active" : ""}" data-i="${i}" aria-label="View ${i + 1}"><img loading="lazy" decoding="async" width="90" height="90" src="${imgPath(c, f).replace(/\/([^\/]+)$/, "/thumbs/$1")}" alt=""></button>`).join("")}</div>` : ""}
         <div class="info"><h3 style="font-size:1.25rem;margin:0 0 6px;">${esc(item.name)}</h3>
           <div class="price">$${item.price.toFixed(0)}</div>
-          ${item.blurb ? `<p class="blurb">${esc(item.blurb)}</p>` : ""}
+          ${item.blurb ? `<p class="blurb">${item.blurb}</p>` : ""}
           ${item.shipping ? `<div class="ship-note">${esc(item.shipping)}</div>` : ""}
           ${optHtml(c, item)}
           ${item.comingSoon ? `<div class="actions"><a class="btn btn-small btn-ghost" href="mailto:nurtureyourjoy2026@gmail.com?subject=${encodeURIComponent("Notify me: " + item.name)}">Notify Me</a></div>` : ""}
