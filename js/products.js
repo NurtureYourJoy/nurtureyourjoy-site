@@ -95,13 +95,16 @@ const COLLECTIONS = [
       title: "The Tiny Details Nobody Notices",
       caption: "Window trim and tiny flower planters for a Whimsical birdhouse, a small part of the build but a lot of steps."
     },
-    post: { image: "assets/products/whimsical/whimsical-workshop.jpg", title: "Coming soon: so many colors, so little time", text: "A brand-new Whimsical line-up is taking shape in the workshop right now. Here is a peek at the color choices." },
     status: "live",
     items: [
-      { files: ["whimsical-show-op.jpg"], name: "Whimsical Cottage, Orange & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
-      { files: ["whimsical-show-ic.jpg"], name: "Whimsical Cottage, Indigo & Citrus", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
-      { files: ["whimsical-show-bp.jpg"], name: "Whimsical Cottage, Blue & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
-      { files: ["whimsical-show-mg.jpg"], name: "Whimsical Cottage, Magenta & Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null }
+      { files: ["wh-mlg1.jpg", "wh-mlg2.jpg"], name: "Whimsical Cottage, Magenta & Lime Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
+      { files: ["wh-pt1.jpg", "wh-pt2.jpg"], name: "Whimsical Cottage, Purple & Teal", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
+      { files: ["wh-bt1.jpg", "wh-bt2.jpg"], name: "Whimsical Cottage, Blue & Teal", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
+      { files: ["wh-blg1.jpg", "wh-blg2.jpg"], name: "Whimsical Teardrop, Blue & Lime Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
+      { files: ["wh-op1.jpg"], name: "Whimsical Cottage, Orange & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null },
+      { files: ["photo-coming-soon.jpg"], name: "Whimsical Cottage, Blue & Red", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", comingSoon: true },
+      { files: ["photo-coming-soon.jpg"], name: "Whimsical Cottage, Blue & Natural", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", comingSoon: true },
+      { files: ["photo-coming-soon.jpg"], name: "Whimsical Cottage, Burgundy & Natural", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", comingSoon: true }
     ]
   },
   {

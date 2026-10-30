@@ -234,6 +234,7 @@
               }).join("") + "</div>"
             : "";
           if(item.soldOut) piece.classList.add("is-sold");
+          if(item.comingSoon) piece.classList.add("is-soon");
           piece.innerHTML =
             '<div class="frame"><img loading="lazy" decoding="async" src="' + files[0] + '" alt="' + altText + '">' +
             (item.soldOut ? '<span class="sold-badge">Sold out<br><small>More coming soon</small></span>' : "") + '</div>' +
@@ -243,14 +244,15 @@
             '<div class="price' + (price ? "" : " tbd") + '">' + (price || "Price on request") + "</div>" +
             shipNote +
             optionsHtml(c.name, item) + (item.options ? '<div class="opt-msg" role="alert"></div>' : "") +
-            (item.soldOut ? "" : '<div class="actions"><a class="btn btn-small' + (item.options ? " needs-choice" : "") + '" href="' + (item.options ? "#" : buyHref(c.name, item)) + '">' +
+            (item.comingSoon ? '<div class="actions"><a class="btn btn-small btn-ghost" href="mailto:' + CONTACT_EMAIL + "?subject=" + encodeURIComponent("Notify me: " + item.name) + '">Notify Me</a></div>' : "") +
+            (item.soldOut || item.comingSoon ? "" : '<div class="actions"><a class="btn btn-small' + (item.options ? " needs-choice" : "") + '" href="' + (item.options ? "#" : buyHref(c.name, item)) + '">' +
             (item.options ? "Buy Now" : (item.buyLink ? "Buy Now" : "Inquire to Order")) + "</a></div>") + "</div>";
           gallery.appendChild(piece);
 
           const frameImg = piece.querySelector(".frame img");
           let activeIndex = 0;
           frameImg.addEventListener("click", function(){
-            openLightbox(files, activeIndex, altText);
+            if(!item.comingSoon) openLightbox(files, activeIndex, altText);
           });
           piece.querySelectorAll(".thumb").forEach(function(btn){
             btn.addEventListener("click", function(){

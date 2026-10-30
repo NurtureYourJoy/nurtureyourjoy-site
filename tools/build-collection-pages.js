@@ -110,7 +110,7 @@ COLLECTIONS.forEach(c => {
     const id = slugify(item.name);
     const label = item.name + (/birdhouse|feeder|carry|kit/i.test(item.name) ? "" : /^(bird-feeders|garden-carry-alls|birdhouse-kit|cedar-boxes)$/.test(c.id) ? "" : " birdhouse");
     return `
-      <div class="piece${item.soldOut ? " is-sold" : ""}" id="${id}"${files.length > 1 ? ` data-files="${files.map(f => imgPath(c, f)).join("|")}"` : ""}>
+      <div class="piece${item.soldOut ? " is-sold" : ""}${item.comingSoon ? " is-soon" : ""}" id="${id}"${files.length > 1 ? ` data-files="${files.map(f => imgPath(c, f)).join("|")}"` : ""}>
         <div class="frame"><img loading="lazy" decoding="async" src="${imgPath(c, files[0])}" alt="${esc(label)}, handmade ${esc(c.name)} collection, Nurture Your Joy">${item.soldOut ? '<span class="sold-badge">Sold out<br><small>More coming soon</small></span>' : ""}</div>${files.length > 1 ? `
         <div class="thumbs">${files.map((f, i) => `<button class="thumb${i === 0 ? " is-active" : ""}" data-i="${i}" aria-label="View ${i + 1}"><img loading="lazy" decoding="async" width="90" height="90" src="${imgPath(c, f).replace(/\/([^\/]+)$/, "/thumbs/$1")}" alt=""></button>`).join("")}</div>` : ""}
         <div class="info"><h3 style="font-size:1.25rem;margin:0 0 6px;">${esc(item.name)}</h3>
@@ -118,7 +118,8 @@ COLLECTIONS.forEach(c => {
           ${item.blurb ? `<p class="blurb">${esc(item.blurb)}</p>` : ""}
           ${item.shipping ? `<div class="ship-note">${esc(item.shipping)}</div>` : ""}
           ${optHtml(c, item)}
-          ${item.soldOut ? "" : `<div class="actions"><a class="btn btn-small${item.options ? " needs-choice" : ""}" href="${item.options ? "#" : (item.buyLink || ("mailto:nurtureyourjoy2026@gmail.com?subject=" + encodeURIComponent("Order inquiry: " + item.name)))}">${item.options || item.buyLink ? "Buy Now" : "Inquire to Order"}</a></div>`}
+          ${item.comingSoon ? `<div class="actions"><a class="btn btn-small btn-ghost" href="mailto:nurtureyourjoy2026@gmail.com?subject=${encodeURIComponent("Notify me: " + item.name)}">Notify Me</a></div>` : ""}
+          ${item.soldOut || item.comingSoon ? "" : `<div class="actions"><a class="btn btn-small${item.options ? " needs-choice" : ""}" href="${item.options ? "#" : (item.buyLink || ("mailto:nurtureyourjoy2026@gmail.com?subject=" + encodeURIComponent("Order inquiry: " + item.name)))}">${item.options || item.buyLink ? "Buy Now" : "Inquire to Order"}</a></div>`}
         </div>
       </div>`;
   }).join("");
@@ -146,7 +147,7 @@ COLLECTIONS.forEach(c => {
           "url": url + "#" + slugify(it.name),
           "priceCurrency": "USD",
           "price": it.price.toFixed(2),
-          "availability": it.soldOut ? "https://schema.org/OutOfStock" : "https://schema.org/InStock",
+          "availability": it.soldOut ? "https://schema.org/OutOfStock" : it.comingSoon ? "https://schema.org/PreOrder" : "https://schema.org/InStock",
           "itemCondition": "https://schema.org/NewCondition",
           ...(shipAmt(it) !== null ? {
             "shippingDetails": {

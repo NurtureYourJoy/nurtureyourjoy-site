@@ -490,3 +490,6 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .opt-select{ width:100%; padding:11px 12px; font:inherit; font-size:15px; border:1px solid rgba(0,0,0,.25); border-radius:4px; background:#fff; color:var(--ink,#222); }
 .opt-msg{ font-size:13px; color:#a33; min-height:0; }
 .opt-msg:empty{ display:none; }
+.piece.is-soon .frame img{ cursor:default; }
+.piece.is-soon:hover .frame img{ transform:none; }
+.piece.is-soon .info h3, .piece.is-soon .info h4{ opacity:.85; }
