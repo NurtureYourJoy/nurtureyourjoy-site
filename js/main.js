@@ -22,6 +22,48 @@
     return "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
   }
 
+  /* ---------- color / option dropdown (one listing, several buy links) ---------- */
+  function optHref(collectionName, item, opt){
+    if(opt.buyLink) return opt.buyLink;
+    const subject = encodeURIComponent("Order inquiry: " + item.name + " (" + opt.label + ")");
+    const body = encodeURIComponent(
+      "Hi Wendy,\n\nI'd love to order the \"" + item.name + "\" in " + opt.label + " from the " + collectionName +
+      " collection.\n\nPlease let me know availability and next steps.\n\nThank you!"
+    );
+    return "mailto:" + CONTACT_EMAIL + "?subject=" + subject + "&body=" + body;
+  }
+  function optionsHtml(collectionName, item){
+    if(!item.options || !item.options.length) return "";
+    const label = item.optionLabel || "Choose an option";
+    return '<label class="opt-wrap"><span class="opt-label">' + label + '</span>' +
+      '<select class="opt-select" aria-label="' + label + '"><option value="" selected disabled>Select&hellip;</option>' +
+      item.options.map(function(o){
+        const href = optHref(collectionName, item, o);
+        return '<option value="' + o.label.replace(/"/g, "&quot;") + '" data-href="' + href.replace(/"/g, "&quot;") + '" data-buy="' + (o.buyLink ? "1" : "0") + '">' + o.label + "</option>";
+      }).join("") + "</select></label>";
+  }
+  document.addEventListener("change", function(e){
+    const sel = e.target.closest && e.target.closest(".opt-select");
+    if(!sel) return;
+    const piece = sel.closest(".piece");
+    const btn = piece && piece.querySelector(".actions .btn");
+    const opt = sel.options[sel.selectedIndex];
+    if(!btn || !opt || !opt.dataset.href) return;
+    btn.href = opt.dataset.href;
+    btn.textContent = opt.dataset.buy === "1" ? "Buy Now" : "Inquire to Order";
+    btn.classList.remove("needs-choice");
+    const msg = piece.querySelector(".opt-msg"); if(msg) msg.textContent = "";
+  });
+  document.addEventListener("click", function(e){
+    const btn = e.target.closest && e.target.closest(".btn.needs-choice");
+    if(!btn) return;
+    e.preventDefault();
+    const piece = btn.closest(".piece");
+    const msg = piece && piece.querySelector(".opt-msg");
+    if(msg) msg.textContent = "Please choose an option first.";
+    const sel = piece && piece.querySelector(".opt-select"); if(sel) sel.focus();
+  });
+
   /* ---------- header scroll state ---------- */
   const header = document.querySelector(".site-header");
   function onScroll(){
@@ -116,7 +158,7 @@
     if(e.key === "ArrowRight") lbStep(1);
   });
 
-  const COLL_PAGES = {"western":"western-birdhouses.html","adobe":"adobe-birdhouses.html","spanish-mission":"spanish-mission-birdhouses.html","whimsical":"whimsical-birdhouses.html","bird-feeders":"bird-feeders.html","garden-carry-alls":"garden-carry-alls.html","birdhouse-kit":"birdhouse-kit.html"};
+  const COLL_PAGES = {"western":"western-birdhouses.html","adobe":"adobe-birdhouses.html","spanish-mission":"spanish-mission-birdhouses.html","whimsical":"whimsical-birdhouses.html","bird-feeders":"bird-feeders.html","garden-carry-alls":"garden-carry-alls.html","cedar-boxes":"cedar-boxes.html","birdhouse-kit":"birdhouse-kit.html"};
   /* ---------- render: collections overview grid ---------- */
   const collGrid = document.querySelector("[data-collections-grid]");
   if(collGrid){
@@ -184,7 +226,7 @@
           const files = (item.files && item.files.length ? item.files : [item.file]).map(function(f){
             return "assets/products/" + c.id + "/" + f.replace(/\.jpe?g$/i, ".webp");
           });
-          const altText = item.name + " birdhouse, " + c.name + " collection";
+          const altText = item.name + (/^(western|adobe|spanish-mission|whimsical)$/.test(c.id) ? " birdhouse, " : ", ") + c.name + " collection";
           const shipNote = item.shipping ? '<div class="ship-note">' + item.shipping + "</div>" : "";
           const thumbs = files.length > 1
             ? '<div class="thumbs">' + files.map(function(f, i){
@@ -197,10 +239,12 @@
             (item.soldOut ? '<span class="sold-badge">Sold out<br><small>More coming soon</small></span>' : "") + '</div>' +
             thumbs +
             '<div class="info"><h4>' + item.name + "</h4>" +
+            (item.blurb ? '<p class="blurb">' + item.blurb + "</p>" : "") +
             '<div class="price' + (price ? "" : " tbd") + '">' + (price || "Price on request") + "</div>" +
             shipNote +
-            (item.soldOut ? "" : '<div class="actions"><a class="btn btn-small" href="' + buyHref(c.name, item) + '">' +
-            (item.buyLink ? "Buy Now" : "Inquire to Order") + "</a></div>") + "</div>";
+            optionsHtml(c.name, item) + (item.options ? '<div class="opt-msg" role="alert"></div>' : "") +
+            (item.soldOut ? "" : '<div class="actions"><a class="btn btn-small' + (item.options ? " needs-choice" : "") + '" href="' + (item.options ? "#" : buyHref(c.name, item)) + '">' +
+            (item.options ? "Buy Now" : (item.buyLink ? "Buy Now" : "Inquire to Order")) + "</a></div>") + "</div>";
           gallery.appendChild(piece);
 
           const frameImg = piece.querySelector(".frame img");
@@ -236,6 +280,23 @@
       sectionsHost.appendChild(section);
     });
   }
+
+  /* ---------- static collection pages: photo thumbnails + lightbox ---------- */
+  document.querySelectorAll(".piece[data-files]").forEach(function(piece){
+    const files = piece.dataset.files.split("|");
+    const frameImg = piece.querySelector(".frame img");
+    const altText = frameImg ? frameImg.alt : "";
+    let activeIndex = 0;
+    if(frameImg) frameImg.addEventListener("click", function(){ if(!piece.classList.contains("is-sold")) openLightbox(files, activeIndex, altText); });
+    piece.querySelectorAll(".thumb").forEach(function(btn){
+      btn.addEventListener("click", function(){
+        activeIndex = parseInt(btn.dataset.i, 10);
+        frameImg.src = files[activeIndex];
+        piece.querySelectorAll(".thumb").forEach(function(t){ t.classList.remove("is-active"); });
+        btn.classList.add("is-active");
+      });
+    });
+  });
 
   /* ---------- render: merch grid ---------- */
   const merchGrid = document.querySelector("[data-merch-grid]");

@@ -114,7 +114,18 @@ const COLLECTIONS = [
     items: [
       { files: ["ai-green-teal-v2.jpg", "feeder-gt1-front.jpg", "feeder-gt1-back.jpg", "feeder-gt1-side.jpg", "feeder-gt1-side2.jpg"], name: "Tray Feeder, Green & Teal", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/00w7sE9MhdDM4Ky5Rsbwk0t" },
       { files: ["ai-rg.jpg", "feeder-rg1-front.jpg", "feeder-rg1-side.jpg"], name: "Tray Feeder, Red & Green", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/aFa3co6A5bvE1ym6Vwbwk0u" },
-      { files: ["ai-to.jpg", "feeder-to1-front.jpg", "feeder-to1-back.jpg", "feeder-to1-side.jpg", "feeder-to1-side2.jpg"], name: "Tray Feeder, Teal & Orange", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/eVq5kwcYt43cb8W93Ebwk0v" }
+      { files: ["ai-to.jpg", "feeder-to1-front.jpg", "feeder-to1-back.jpg", "feeder-to1-side.jpg", "feeder-to1-side2.jpg"], name: "Tray Feeder, Teal & Orange", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/eVq5kwcYt43cb8W93Ebwk0v" },
+      {
+        files: ["feeder-whimsical-mt1.jpg", "feeder-whimsical-mt2.jpg", "feeder-whimsical-bt1.jpg", "feeder-whimsical-bt2.jpg"],
+        name: "Whimsical Tray Feeder", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)",
+        optionLabel: "Choose your colors",
+        options: [
+          { label: "Blue & Teal", buyLink: null },
+          { label: "Magenta & Teal", buyLink: null },
+          { label: "Blue & Natural", buyLink: null },
+          { label: "Burgundy & Natural", buyLink: null }
+        ]
+      }
     ]
   },
   {
@@ -125,10 +136,55 @@ const COLLECTIONS = [
     cover: "assets/collections-hero/hero-garden-carry-alls.jpg",
     status: "live",
     items: [
-      { files: ["ai-purple.jpg", "carryall-purple1-front.jpg", "carryall-purple1-side.jpg"], name: "Garden Carry-All, Purple", price: 30, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/dRmdR2bUp8js7WK7ZAbwk0w" },
-      { files: ["ai-teal.jpg", "carryall-teal1-front.jpg", "carryall-teal1-side.jpg"], name: "Garden Carry-All, Teal", price: 30, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/aFa7sE3nT8jsa4S5Rsbwk0x" },
-      { files: ["ai-red.jpg", "carryall-red1-front.jpg", "carryall-red1-side.jpg"], name: "Garden Carry-All, Red", price: 30, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/4gMfZa1fL8jsfpcenYbwk0y" },
-      { files: ["ai-yellow.jpg", "carryall-yellow1-front.jpg", "carryall-yellow1-side.jpg"], name: "Garden Carry-All, Yellow", price: 30, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/eVqfZa5w1dDM2Cq1Bcbwk0z" }
+      {
+        files: ["carryalls-dustpans-group.jpg", "carryall-purple1-front.jpg", "carryall-teal1-front.jpg", "carryall-red1-front.jpg", "carryall-yellow1-front.jpg", "carryall-purple1-side.jpg", "ai-purple.jpg", "ai-teal.jpg", "ai-red.jpg", "ai-yellow.jpg"],
+        name: "Garden Carry-All", price: 30, shipping: "Plus $17 flat-rate shipping (contiguous US only)",
+        blurb: "A sturdy hand-painted tote with a rustic branch handle and a real Arizona license plate on the front. Perfect for tools, cut flowers and garden finds, and a great gift for the gardener in your life.",
+        optionLabel: "Choose your color",
+        options: [
+          { label: "Purple", buyLink: "https://buy.stripe.com/dRmdR2bUp8js7WK7ZAbwk0w" },
+          { label: "Teal", buyLink: "https://buy.stripe.com/aFa7sE3nT8jsa4S5Rsbwk0x" },
+          { label: "Red", buyLink: "https://buy.stripe.com/4gMfZa1fL8jsfpcenYbwk0y" },
+          { label: "Yellow", buyLink: "https://buy.stripe.com/eVqfZa5w1dDM2Cq1Bcbwk0z" },
+          { label: "Blue", buyLink: null }
+        ]
+      },
+      {
+        files: ["carryalls-dustpans-group.jpg"],
+        name: "Arizona License Plate Dust Pan", price: 15, shipping: "Plus $8 flat-rate shipping (contiguous US only)",
+        blurb: "A hand-painted dust pan made with a real Arizona license plate. It's handy in the shop, the garage or the garden, and makes a great gift.",
+        optionLabel: "Choose your color",
+        options: [
+          { label: "Purple", buyLink: null },
+          { label: "Teal", buyLink: null },
+          { label: "Red", buyLink: null },
+          { label: "Yellow", buyLink: null },
+          { label: "Blue", buyLink: null }
+        ]
+      }
+    ]
+  },
+  {
+    id: "cedar-boxes",
+    name: "Cedar Boxes",
+    tagline: "Locally handcrafted keepsake boxes, each one cut from a real cedar log.",
+    dimensions: "3\" deep; height and width vary with each log",
+    standardNotes: false,
+    extraNotes: [
+      "No two boxes are alike. Each one is shaped by the cedar log it came from, so the height and width vary, and the grain and color are all one of a kind.",
+      "You can't pick a specific box. Each order is a surprise, and we'll choose a beautiful one and send it to you.",
+      "These make great gifts.",
+      "Please allow 2 weeks for shipping and handling."
+    ],
+    cover: "assets/collections-hero/hero-cedar-boxes.jpg",
+    status: "live",
+    items: [
+      {
+        files: ["cedar-boxes-display1.jpg", "cedar-boxes-display2.jpg"],
+        name: "Cedar Keepsake Box", price: 25, shipping: "Plus $8 flat-rate shipping (contiguous US only)",
+        blurb: "Each keepsake box has a little drawer with a wooden pull and is 3\" deep. Because every cedar log is different, the height and width vary, and you'll receive the box we choose for you.",
+        buyLink: null
+      }
     ]
   },
   {

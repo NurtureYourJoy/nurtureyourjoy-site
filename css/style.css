@@ -482,3 +482,11 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .coll-post-text h3{ font-size:1.8rem; margin:0 0 10px; }
 .coll-post-text p{ margin:0; color:var(--ink-soft); }
 @media (max-width:640px){ .coll-post{ flex-direction:column; text-align:center; } .coll-post img{ width:100%; max-width:none; } }
+
+/* option dropdown + blurb on product cards */
+.piece .blurb{ font-size:14px; line-height:1.55; color:var(--ink-soft); margin:0; }
+.opt-wrap{ display:flex; flex-direction:column; gap:6px; }
+.opt-label{ font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); }
+.opt-select{ width:100%; padding:11px 12px; font:inherit; font-size:15px; border:1px solid rgba(0,0,0,.25); border-radius:4px; background:#fff; color:var(--ink,#222); }
+.opt-msg{ font-size:13px; color:#a33; min-height:0; }
+.opt-msg:empty{ display:none; }

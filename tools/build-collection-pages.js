@@ -52,10 +52,17 @@ const SEO = {
   },
   "garden-carry-alls": {
     slug: "garden-carry-alls",
-    title: "Handmade Garden Carry-All Totes with License Plate | Nurture Your Joy",
-    desc: "Handmade wooden garden carry-all totes for tools, cut flowers and garden finds, finished with a real license plate. $30 each, made in Arizona.",
-    h1: "Garden Carry-Alls",
-    intro: "Handled totes for hauling garden tools, cut flowers and garden finds, finished with a real license plate. Sturdy, hand-painted and made to live outdoors."
+    title: "Handmade Garden Carry-All Totes & Arizona License Plate Dust Pans | Nurture Your Joy",
+    desc: "Handmade wooden garden carry-all totes ($30) and hand-painted Arizona license plate dust pans ($15), in five colors. Great gifts, made in Arizona.",
+    h1: "Garden Carry-Alls & Dust Pans",
+    intro: "Handled totes for hauling garden tools, cut flowers and garden finds, plus matching dust pans, each finished with a real Arizona license plate. Sturdy, hand-painted and made to live outdoors. They make great gifts."
+  },
+  "cedar-boxes": {
+    slug: "cedar-boxes",
+    title: "Handmade Cedar Keepsake Boxes, Each One Cut from a Real Cedar Log | Nurture Your Joy",
+    desc: "Locally handcrafted cedar keepsake boxes, each cut from a real cedar log with a little drawer. No two are alike. $25 each, made in Arizona. A great gift.",
+    h1: "Cedar Boxes",
+    intro: "Locally handcrafted keepsakes, each one cut from a real cedar log and fitted with a little drawer. Every box is different, so you get the one we pick for you."
   },
   "birdhouse-kit": {
     slug: "birdhouse-kit",
@@ -81,6 +88,13 @@ const imgPath = (c, f) => "assets/products/" + c.id + "/" + f.replace(/\.jpe?g$/
 const imgAbs = (c, f) => SITE + "/assets/products/" + c.id + "/" + f;
 const slugify = s => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
+const optHref = (c, item, o) => o.buyLink || ("mailto:nurtureyourjoy2026@gmail.com?subject=" + encodeURIComponent("Order inquiry: " + item.name + " (" + o.label + ")") +
+  "&body=" + encodeURIComponent("Hi Wendy,\n\nI'd love to order the \"" + item.name + "\" in " + o.label + " from the " + c.name + " collection.\n\nPlease let me know availability and next steps.\n\nThank you!"));
+const optHtml = (c, item) => !(item.options && item.options.length) ? "" :
+  `<label class="opt-wrap"><span class="opt-label">${esc(item.optionLabel || "Choose an option")}</span><select class="opt-select" aria-label="${esc(item.optionLabel || "Choose an option")}"><option value="" selected disabled>Select&hellip;</option>` +
+  item.options.map(o => `<option value="${esc(o.label)}" data-href="${esc(optHref(c, item, o))}" data-buy="${o.buyLink ? 1 : 0}">${esc(o.label)}</option>`).join("") +
+  `</select></label><div class="opt-msg" role="alert"></div>`;
+
 COLLECTIONS.forEach(c => {
   const s = SEO[c.id];
   if (!s) return;
@@ -94,14 +108,17 @@ COLLECTIONS.forEach(c => {
   const pieces = c.items.map(item => {
     const files = item.files;
     const id = slugify(item.name);
-    const label = item.name + (/birdhouse|feeder|carry|kit/i.test(item.name) ? "" : (c.id === "bird-feeders" || c.id === "garden-carry-alls" || c.id === "birdhouse-kit") ? "" : " birdhouse");
+    const label = item.name + (/birdhouse|feeder|carry|kit/i.test(item.name) ? "" : /^(bird-feeders|garden-carry-alls|birdhouse-kit|cedar-boxes)$/.test(c.id) ? "" : " birdhouse");
     return `
-      <div class="piece${item.soldOut ? " is-sold" : ""}" id="${id}">
-        <div class="frame"><img loading="lazy" decoding="async" src="${imgPath(c, files[0])}" alt="${esc(label)}, handmade ${esc(c.name)} collection, Nurture Your Joy">${item.soldOut ? '<span class="sold-badge">Sold out<br><small>More coming soon</small></span>' : ""}</div>
+      <div class="piece${item.soldOut ? " is-sold" : ""}" id="${id}"${files.length > 1 ? ` data-files="${files.map(f => imgPath(c, f)).join("|")}"` : ""}>
+        <div class="frame"><img loading="lazy" decoding="async" src="${imgPath(c, files[0])}" alt="${esc(label)}, handmade ${esc(c.name)} collection, Nurture Your Joy">${item.soldOut ? '<span class="sold-badge">Sold out<br><small>More coming soon</small></span>' : ""}</div>${files.length > 1 ? `
+        <div class="thumbs">${files.map((f, i) => `<button class="thumb${i === 0 ? " is-active" : ""}" data-i="${i}" aria-label="View ${i + 1}"><img loading="lazy" decoding="async" width="90" height="90" src="${imgPath(c, f).replace(/\/([^\/]+)$/, "/thumbs/$1")}" alt=""></button>`).join("")}</div>` : ""}
         <div class="info"><h3 style="font-size:1.25rem;margin:0 0 6px;">${esc(item.name)}</h3>
           <div class="price">$${item.price.toFixed(0)}</div>
+          ${item.blurb ? `<p class="blurb">${esc(item.blurb)}</p>` : ""}
           ${item.shipping ? `<div class="ship-note">${esc(item.shipping)}</div>` : ""}
-          ${item.soldOut ? "" : `<div class="actions"><a class="btn btn-small" href="${item.buyLink || ("mailto:nurtureyourjoy2026@gmail.com?subject=" + encodeURIComponent("Order inquiry: " + item.name))}">${item.buyLink ? "Buy Now" : "Inquire to Order"}</a></div>`}
+          ${optHtml(c, item)}
+          ${item.soldOut ? "" : `<div class="actions"><a class="btn btn-small${item.options ? " needs-choice" : ""}" href="${item.options ? "#" : (item.buyLink || ("mailto:nurtureyourjoy2026@gmail.com?subject=" + encodeURIComponent("Order inquiry: " + item.name)))}">${item.options || item.buyLink ? "Buy Now" : "Inquire to Order"}</a></div>`}
         </div>
       </div>`;
   }).join("");
@@ -120,7 +137,7 @@ COLLECTIONS.forEach(c => {
       },
       ...c.items.map(it => ({
         "@type": "Product",
-        "name": it.name + (c.id === "bird-feeders" || c.id === "garden-carry-alls" || c.id === "birdhouse-kit" ? "" : " Birdhouse"),
+        "name": it.name + (/^(bird-feeders|garden-carry-alls|birdhouse-kit|cedar-boxes)$/.test(c.id) ? "" : " Birdhouse"),
         "image": it.files.map(f => imgAbs(c, f)),
         "description": s.desc,
         "brand": { "@type": "Brand", "name": "Nurture Your Joy" },
