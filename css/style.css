@@ -80,6 +80,9 @@ h1.section-title,h2.section-title{ font-size:clamp(2.1rem,3.6vw,3rem); line-heig
 }
 .notes li::before{ content:"—"; position:absolute; left:0; color:var(--gold); }
 .section--dark .notes li{ color:#CFC8B4; }
+.notes li a{ color:#1a5fb4; text-decoration:underline; font-weight:500; }
+.notes li a:hover{ color:#0d3f80; }
+.section--dark .notes li a{ color:#7db4ff; }
 
 /* ---------- buttons ---------- */
 .btn{
