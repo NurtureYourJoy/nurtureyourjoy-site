@@ -125,7 +125,7 @@ h1.section-title,h2.section-title{ font-size:clamp(2.1rem,3.6vw,3rem); line-heig
 }
 .site-header .wrap{ display:flex; align-items:center; justify-content:space-between; gap:24px; }
 .brand{ display:flex; align-items:center; gap:12px; }
-.brand img{ height:48px; width:auto; transition:height .4s ease; filter:drop-shadow(0 2px 6px rgba(0,0,0,.18)); }
+.brand img{ height:56px; width:auto; transition:height .4s ease; }
 .is-scrolled .brand img{ height:38px; }
 .brand-word{ font-family:'Cormorant Garamond',serif; font-size:1.35rem; color:#fff; transition:color .4s ease; }
 .is-scrolled .brand-word{ color:var(--ink); }
