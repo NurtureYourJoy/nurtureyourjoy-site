@@ -607,3 +607,17 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .cert-examples img{ width:100%; height:auto; border-radius:10px; box-shadow:var(--shadow); }
 .cert-examples figcaption{ margin-top:8px; font-size:.9rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
 @media (max-width:760px){ .cert-examples{ grid-template-columns:1fr; } }
+
+/* === Navy top banner (header) with white text, all pages === */
+.site-header, .site-header.is-scrolled, body.no-hero .site-header{
+  background:var(--navy); backdrop-filter:none; border-color:rgba(255,255,255,.12);
+  box-shadow:0 10px 30px -22px rgba(10,20,40,.6);
+}
+.brand-word, .is-scrolled .brand-word, body.no-hero .brand-word{ color:#FFFFFF; }
+.brand-word span, .is-scrolled .brand-word span, body.no-hero .brand-word span{ color:#BBD0F0; }
+.main-nav a, .is-scrolled .main-nav a, body.no-hero .main-nav a{ color:#FFFFFF; }
+.nav-toggle span, .is-scrolled .nav-toggle span, body.no-hero .nav-toggle span{ background:#FFFFFF; }
+@media (max-width:760px){
+  .main-nav{ background:var(--navy-dk); }
+  .main-nav a{ color:#FFFFFF !important; }
+}
