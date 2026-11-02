@@ -623,3 +623,7 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 }
 .brand img, body.no-hero .brand img{ height:54px; }
 .is-scrolled .brand img{ height:48px; }
+
+/* === Blue buttons === */
+:root{ --rust:#3A6BC5; --rust-dk:#274F9E; }
+.btn:hover{ box-shadow:0 14px 28px -14px rgba(39,79,158,.6); }
