@@ -569,3 +569,9 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .henry-card{ position:absolute; right:10px; bottom:6px; width:110px; text-align:center; pointer-events:none; z-index:3; }
 .henry-card img, .henry-card video{ width:100%; height:auto; display:block; }
 .henry-card .henry-say{ display:block; font-family:'Alex Brush',cursive; font-size:1.15rem; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.6); margin-top:-4px; }
+
+/* Henry centered */
+.henry-corner{ position:static !important; margin:0 auto 14px !important; width:260px !important; }
+.henry-corner img{ width:170px; }
+.henry-corner video{ width:100%; max-width:260px; margin:0 auto; }
+.henry-card{ right:auto !important; left:50% !important; transform:translateX(-50%); bottom:8px !important; width:120px !important; }

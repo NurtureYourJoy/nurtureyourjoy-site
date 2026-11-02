@@ -94,7 +94,7 @@ const COLLECTIONS = [
   },
   {
     id: "whimsical",
-    henry: { type: "img", src: "assets/henry/henry-painter.webp", alt: "Henry the painter", say: "Color me happy!" },
+    henry: { type: "video", src: "assets/henry/henry-painter.webm", alt: "Henry the painter", say: "Color me happy!" },
     name: "Whimsical",
     tagline: "A little fantasy for the flower bed, curved and painted by hand.",
     dimensions: "10.5\" tall x 9\" deep x 5.5\" wide",
@@ -121,7 +121,7 @@ const COLLECTIONS = [
   },
   {
     id: "adobe",
-    henry: { type: "img", src: "assets/henry/henry-sombrero.webp", alt: "Henry in a sombrero", say: "Buenos días!" },
+    henry: { type: "video", src: "assets/henry/henry-sombrero.webm", alt: "Henry in a sombrero", say: "Buenos días!" },
     name: "Adobe",
     tagline: "Stepped pueblo silhouettes with hand-set viga posts, straight from the high desert.",
     dimensions: "10.5\" tall x 9\" deep x 5.5\" wide",
