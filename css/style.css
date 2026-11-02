@@ -621,3 +621,5 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
   .main-nav{ background:var(--navy-dk); }
   .main-nav a{ color:#FFFFFF !important; }
 }
+.brand img, body.no-hero .brand img{ height:54px; }
+.is-scrolled .brand img{ height:48px; }
