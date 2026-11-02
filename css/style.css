@@ -537,6 +537,17 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .btn-ghost-dark{ background:transparent; color:var(--ink); border:1px solid var(--ink); }
 .btn-ghost-dark:hover{ background:var(--ink); color:#fff; }
 .trust-line-dark{ font-size:.85rem; letter-spacing:.04em; color:var(--ink-soft); margin-top:18px; }
-.henry-stage{ position:relative; z-index:2; margin:0 0 -2vw; pointer-events:none; }
-.henry-stage video{ width:100%; height:auto; display:block; }
+.henry-stage{ position:relative; z-index:2; margin:0 0 -1vw; pointer-events:none; overflow:hidden; height:min(46vw,520px); }
+.henry-stage video{ position:absolute; left:50%; bottom:0; width:max(118%,720px); max-width:none; height:auto; transform:translateX(-50%);
+  -webkit-mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 14%);
+  -webkit-mask-composite:source-in; mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%),linear-gradient(to bottom,transparent 0,#000 14%); mask-composite:intersect; }
+.henry-caption{ font-family:'Alex Brush',cursive; font-size:1.5rem; color:var(--gold); margin-top:14px; }
 @media (max-width:860px){ .henry-hero{ padding-top:60px; } }
+
+/* ---------- Henry on collection pages ---------- */
+.collection-section .wrap{ position:relative; }
+.henry-corner{ position:absolute; right:0; top:-30px; width:240px; text-align:center; pointer-events:none; }
+.henry-corner img, .henry-corner video{ width:100%; height:auto; display:block; }
+.henry-corner img{ width:150px; margin:0 auto; }
+.henry-say{ display:block; font-family:'Alex Brush',cursive; font-size:1.5rem; color:var(--gold); margin-top:2px; }
+@media (max-width:1000px){ .henry-corner{ position:static; margin:0 auto 10px; width:190px; } .henry-corner img{ width:120px; } }

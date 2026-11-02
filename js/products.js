@@ -26,6 +26,7 @@ const HAND_PAINTED_NOTE = "Every piece is hand-painted.";
 const COLLECTIONS = [
   {
     id: "cedar-boxes",
+    henry: { type: "img", src: "assets/henry/henry-pondering.webp", alt: "Henry wondering which box will find you", say: "Which box will find you?" },
     name: "Cedar Boxes",
     tagline: "Locally handcrafted keepsake boxes, each one cut from a real cedar log.",
     dimensions: "approximately 3\" deep x 3\" tall x 3\" wide; exact size varies with each log",
@@ -49,6 +50,7 @@ const COLLECTIONS = [
   },
   {
     id: "western",
+    henry: { type: "video", src: "assets/henry/henry-sheriff.webm", alt: "Sheriff Henry", say: "Howdy, pardner!" },
     name: "The Western Collection",
     tagline: "Saloons, sheriffs and general stores, whittled down to birdhouse scale.",
     dimensions: "10.5\" tall x 10\" deep x 5.5\" wide",
@@ -68,6 +70,7 @@ const COLLECTIONS = [
   },
   {
     id: "spanish-mission",
+    henry: { type: "video", src: "assets/henry/henry-guitar.webm", alt: "Henry playing guitar", say: "Olé!" },
     name: "Spanish Mission",
     tagline: "Bell towers, cross spires and arched windows, modeled after the old Spanish missions of the Southwest.",
     dimensions: "12.25\" tall x 10\" deep x 6.75\" wide",
@@ -91,6 +94,7 @@ const COLLECTIONS = [
   },
   {
     id: "whimsical",
+    henry: { type: "img", src: "assets/henry/henry-painter.webp", alt: "Henry the painter", say: "Color me happy!" },
     name: "Whimsical",
     tagline: "A little fantasy for the flower bed, curved and painted by hand.",
     dimensions: "10.5\" tall x 9\" deep x 5.5\" wide",
@@ -117,6 +121,7 @@ const COLLECTIONS = [
   },
   {
     id: "adobe",
+    henry: { type: "img", src: "assets/henry/henry-sombrero.webp", alt: "Henry in a sombrero", say: "Buenos días!" },
     name: "Adobe",
     tagline: "Stepped pueblo silhouettes with hand-set viga posts, straight from the high desert.",
     dimensions: "10.5\" tall x 9\" deep x 5.5\" wide",
@@ -135,6 +140,7 @@ const COLLECTIONS = [
   },
   {
     id: "bird-feeders",
+    henry: { type: "img", src: "assets/henry/henry-base.webp", alt: "Henry the quail", say: "Room for one more?" },
     name: "Bird Feeders",
     tagline: "Hanging tray feeders topped with a hand-painted Whimsical birdhouse, in four color combinations.",
     dimensions: "11.25\" tall x 11\" deep x 12\" wide",
@@ -155,6 +161,7 @@ const COLLECTIONS = [
   },
   {
     id: "garden-carry-alls",
+    henry: { type: "img", src: "assets/henry/henry-cap.webp", alt: "Henry in a ball cap", say: "Let\u2019s go garden!" },
     name: "Garden Carry-Alls",
     tagline: "Handled totes for hauling tools, cut flowers and garden finds, finished with a real license plate.",
     dimensions: "12\" tall x 12.5\" deep x 5.5\" wide",
@@ -191,6 +198,7 @@ const COLLECTIONS = [
   },
   {
     id: "birdhouse-kit",
+    henry: { type: "img", src: "assets/henry/henry-hardhat.webp", alt: "Henry in a hard hat", say: "Let\u2019s build one!" },
     name: "The Birdhouse Kit",
     tagline: "Paint it. Build it. Make it yours. A creative project for everyone, ages 10 to 110.",
     standardNotes: false,
