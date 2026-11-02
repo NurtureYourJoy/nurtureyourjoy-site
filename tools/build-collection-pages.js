@@ -8,8 +8,8 @@ const SITE = "https://nurtureyourjoy.net";
 
 const ctx = {}; vm.createContext(ctx);
 vm.runInContext(fs.readFileSync(ROOT + "/js/products.js", "utf8") +
-  ";this.C=COLLECTIONS;this.N=STANDARD_NOTES;this.H=HAND_PAINTED_NOTE;this.S=SHOW_NOTE;", ctx);
-const COLLECTIONS = ctx.C, STD = ctx.N, HAND = ctx.H, SHOW = ctx.S;
+  ";this.C=COLLECTIONS;this.N=STANDARD_NOTES;this.H=HAND_PAINTED_NOTE;this.S=SHOW_NOTE;this.R=RETURN_NOTE;", ctx);
+const COLLECTIONS = ctx.C, STD = ctx.N, HAND = ctx.H, SHOW = ctx.S, RET = ctx.R;
 
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
@@ -106,6 +106,7 @@ COLLECTIONS.forEach(c => {
   if (c.standardNotes !== false && c.handPainted !== false) base.splice(base.length - 1, 0, HAND);
   const notes = (c.extraNotes || []).concat(base);
   const noteHtml = notes.map(n => esc(n));
+  noteHtml.push(RET);
   noteHtml.push(SHOW);
 
   const pieces = c.items.map(item => {
