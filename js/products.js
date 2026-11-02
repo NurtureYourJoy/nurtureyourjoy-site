@@ -26,7 +26,7 @@ const HAND_PAINTED_NOTE = "Every piece is hand-painted.";
 const COLLECTIONS = [
   {
     id: "cedar-boxes",
-    henry: { type: "img", src: "assets/henry/henry-pondering.webp", alt: "Henry wondering which box will find you", say: "Which box will find you?" },
+    henry: { type: "video", src: "assets/henry/henry-pondering.webm", alt: "Henry wondering which box will find you", say: "Which box will find you?" , fade: "bottom" },
     name: "Cedar Boxes",
     tagline: "Locally handcrafted keepsake boxes, each one cut from a real cedar log.",
     dimensions: "approximately 3\" deep x 3\" tall x 3\" wide; exact size varies with each log",

@@ -581,3 +581,22 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .henry-corner{ width:340px !important; max-width:100%; }
 .henry-fade{ -webkit-mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%); mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%); }
 .henry-fade.henry-fade-b{ -webkit-mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%),linear-gradient(to bottom,#000 0,#000 90%,transparent 100%); -webkit-mask-composite:source-in; mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%),linear-gradient(to bottom,#000 0,#000 90%,transparent 100%); mask-composite:intersect; }
+
+/* === Navy blue banners (replaces the dark brown/green bands) === */
+:root{ --navy:#1F3358; --navy-dk:#16243F; --forest-dk:#1F3358; --ink-band:#16243F; }
+.section--dark, .split-panel.dark{ background:var(--navy); color:#FFFFFF; }
+.section--dark h2, .section--dark h3{ color:#FFFFFF; }
+.section--dark .lede, .section--dark .notes li{ color:#DCE5F5; }
+.section--dark .dims, .section--dark .discount-note{ color:#A9BFE8; }
+.section--dark .notes li a{ color:#BBD3FF; }
+.section--dark .btn-ghost{ color:#FFFFFF; border-color:#FFFFFF; }
+.section--dark .btn-ghost:hover{ background:#FFFFFF; color:var(--navy); }
+.promo-strip{ background:var(--navy); color:#FFFFFF; }
+.site-footer{ background:var(--navy-dk); color:#E3EAF8; }
+.site-footer a, .site-footer h4, .site-footer h3{ color:#FFFFFF; }
+.coll-grid{ background:var(--navy-dk); }
+.coll-card{ background:var(--navy); }
+.coll-card::after, .coll-card .overlay{ background:linear-gradient(180deg, rgba(16,28,52,.05) 30%, rgba(14,24,46,.9) 100%); }
+.hero::after, .hero-overlay{ background:linear-gradient(180deg, rgba(20,34,62,.15) 0%, rgba(18,30,56,.2) 45%, rgba(14,24,46,.86) 100%); }
+.lightbox{ background:rgba(14,24,46,.94); }
+.coll-card .veil{ background:linear-gradient(180deg, rgba(16,28,52,.05) 30%, rgba(14,24,46,.9) 100%); }
