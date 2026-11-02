@@ -575,3 +575,9 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .henry-corner img{ width:170px; }
 .henry-corner video{ width:100%; max-width:260px; margin:0 auto; }
 .henry-card{ right:auto !important; left:50% !important; transform:translateX(-50%); bottom:8px !important; width:120px !important; }
+
+/* Soft edges so Henry's clip frame is never a hard cut */
+.henry-corner video, .henry-card video{ max-width:340px !important; }
+.henry-corner{ width:340px !important; max-width:100%; }
+.henry-fade{ -webkit-mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%); mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%); }
+.henry-fade.henry-fade-b{ -webkit-mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%),linear-gradient(to bottom,#000 0,#000 90%,transparent 100%); -webkit-mask-composite:source-in; mask-image:linear-gradient(to right,transparent 0,#000 7%,#000 93%,transparent 100%),linear-gradient(to bottom,#000 0,#000 90%,transparent 100%); mask-composite:intersect; }

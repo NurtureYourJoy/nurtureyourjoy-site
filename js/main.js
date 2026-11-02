@@ -162,7 +162,7 @@
     if(!c.henry) return "";
     var h = c.henry;
     var media = h.type === "video"
-      ? '<video autoplay muted loop playsinline preload="auto" aria-label="' + h.alt + '"><source src="' + h.src + '" type="video/webm"></video>'
+      ? '<video class="henry-fade' + (h.fade === "bottom" ? " henry-fade-b" : "") + '" autoplay muted loop playsinline preload="auto" aria-label="' + h.alt + '"><source src="' + h.src + '" type="video/webm"></video>'
       : '<img src="' + h.src + '" alt="' + h.alt + '" loading="lazy">';
     return '<div class="' + cls + '">' + media + '<span class="henry-say">' + h.say + "</span></div>";
   }

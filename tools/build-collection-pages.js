@@ -105,7 +105,7 @@ COLLECTIONS.forEach(c => {
   const base = (c.standardNotes !== false) ? STD.slice() : [];
   if (c.standardNotes !== false && c.handPainted !== false) base.splice(base.length - 1, 0, HAND);
   const notes = (c.extraNotes || []).concat(base);
-  const henryHtml = c.henry ? `<div class="henry-corner">${c.henry.type === "video" ? `<video autoplay muted loop playsinline preload="auto" aria-label="${esc(c.henry.alt)}"><source src="${c.henry.src}" type="video/webm"></video>` : `<img src="${c.henry.src}" alt="${esc(c.henry.alt)}" loading="lazy">`}<span class="henry-say">${esc(c.henry.say)}</span></div>` : "";
+  const henryHtml = c.henry ? `<div class="henry-corner">${c.henry.type === "video" ? `<video class="henry-fade${c.henry.fade === "bottom" ? " henry-fade-b" : ""}" autoplay muted loop playsinline preload="auto" aria-label="${esc(c.henry.alt)}"><source src="${c.henry.src}" type="video/webm"></video>` : `<img src="${c.henry.src}" alt="${esc(c.henry.alt)}" loading="lazy">`}<span class="henry-say">${esc(c.henry.say)}</span></div>` : "";
   const noteHtml = notes.map(n => esc(n));
   noteHtml.push(RET);
   noteHtml.push(SHOW);
