@@ -198,7 +198,7 @@ const COLLECTIONS = [
   },
   {
     id: "birdhouse-kit",
-    henry: { type: "img", src: "assets/henry/henry-hardhat.webp", alt: "Henry in a hard hat", say: "Let\u2019s build one!" },
+    henry: { type: "video", src: "assets/henry/henry-hardhat.webm", alt: "Henry in a hard hat", say: "Let\u2019s build one!" , fade: "bottom" },
     name: "The Birdhouse Kit",
     tagline: "Paint it. Build it. Make it yours. A creative project for everyone, ages 10 to 110.",
     standardNotes: false,
