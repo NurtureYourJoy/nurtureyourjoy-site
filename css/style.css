@@ -555,3 +555,14 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .henry-corner img{ width:150px; margin:0 auto; }
 .henry-say{ display:block; font-family:'Alex Brush',cursive; font-size:1.5rem; color:var(--gold); margin-top:2px; }
 @media (max-width:1000px){ .henry-corner{ position:static; margin:0 auto 10px; width:190px; } .henry-corner img{ width:120px; } }
+
+/* ---------- Joy Board ---------- */
+.joy-notes{ display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:22px; margin-top:34px; }
+.joy-note{ padding:22px 18px; min-height:150px; box-shadow:0 8px 18px -10px rgba(45,38,24,.45); display:flex; flex-direction:column; justify-content:space-between; }
+.joy-note p{ font-family:'Alex Brush',cursive; font-size:1.7rem; line-height:1.15; color:var(--ink); }
+.joy-note span{ font-size:.8rem; color:var(--ink-soft); margin-top:12px; }
+.joy-note-empty{ border:2px dashed var(--gold); box-shadow:none; align-items:center; justify-content:center; text-align:center; color:var(--gold); }
+.joy-form{ margin-top:18px; }
+.joy-form iframe{ width:100%; max-width:700px; height:720px; border:0; background:#fff; border-radius:12px; }
+.joy-booth{ margin-top:36px; }
+.joy-qr{ display:block; margin-top:10px; border-radius:8px; }
