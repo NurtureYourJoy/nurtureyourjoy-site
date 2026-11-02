@@ -50,7 +50,7 @@ const COLLECTIONS = [
   },
   {
     id: "western",
-    henry: { type: "video", src: "assets/henry/henry-sheriff.webm", alt: "Sheriff Henry", say: "Howdy, pardner!" },
+    henry: { type: "video", src: "assets/henry/henry-sheriff.webm", alt: "Sheriff Henry", say: "Howdy, pardner!", fade: "bottom" },
     name: "The Western Collection",
     tagline: "Saloons, sheriffs and general stores, whittled down to birdhouse scale.",
     dimensions: "10.5\" tall x 10\" deep x 5.5\" wide",
@@ -70,7 +70,7 @@ const COLLECTIONS = [
   },
   {
     id: "spanish-mission",
-    henry: { type: "video", src: "assets/henry/henry-guitar.webm", alt: "Henry playing guitar", say: "Olé!" },
+    henry: { type: "video", src: "assets/henry/henry-guitar.webm", alt: "Henry playing guitar", say: "Olé!", fade: "bottom" },
     name: "Spanish Mission",
     tagline: "Bell towers, cross spires and arched windows, modeled after the old Spanish missions of the Southwest.",
     dimensions: "12.25\" tall x 10\" deep x 6.75\" wide",
@@ -94,7 +94,7 @@ const COLLECTIONS = [
   },
   {
     id: "whimsical",
-    henry: { type: "video", src: "assets/henry/henry-painter.webm", alt: "Henry the painter", say: "Color me happy!" },
+    henry: { type: "video", src: "assets/henry/henry-painter.webm", alt: "Henry the painter", say: "Color me happy!", fade: "bottom" },
     name: "Whimsical",
     tagline: "A little fantasy for the flower bed, curved and painted by hand.",
     dimensions: "10.5\" tall x 9\" deep x 5.5\" wide",
