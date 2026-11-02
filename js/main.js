@@ -158,6 +158,14 @@
     if(e.key === "ArrowRight") lbStep(1);
   });
 
+  function henryHtml(c, cls){
+    if(!c.henry) return "";
+    var h = c.henry;
+    var media = h.type === "video"
+      ? '<video autoplay muted loop playsinline preload="auto" aria-label="' + h.alt + '"><source src="' + h.src + '" type="video/webm"></video>'
+      : '<img src="' + h.src + '" alt="' + h.alt + '" loading="lazy">';
+    return '<div class="' + cls + '">' + media + '<span class="henry-say">' + h.say + "</span></div>";
+  }
   const COLL_PAGES = {"western":"western-birdhouses.html","adobe":"adobe-birdhouses.html","spanish-mission":"spanish-mission-birdhouses.html","whimsical":"whimsical-birdhouses.html","bird-feeders":"bird-feeders.html","garden-carry-alls":"garden-carry-alls.html","cedar-boxes":"cedar-boxes.html","birdhouse-kit":"birdhouse-kit.html"};
   /* ---------- render: collections overview grid ---------- */
   const collGrid = document.querySelector("[data-collections-grid]");
@@ -177,6 +185,7 @@
         "<p>" + c.tagline + "</p>" +
         '<a href="' + (COLL_PAGES[c.id] || ('#coll-' + c.id)) + '">' + (c.status === "coming" ? "Get notified" : "View collection") + "</a>";
       card.appendChild(body);
+      if(c.henry){ var hw = document.createElement("div"); hw.innerHTML = henryHtml(c, "henry-card"); card.appendChild(hw.firstChild); }
       collGrid.appendChild(card);
     });
   }
@@ -205,7 +214,7 @@
         "<h2 class=\"section-title\">" + c.name + "</h2>" +
         '<p class="lede">' + c.tagline + "</p>" +
         dimsLine + notesLines + "</div>";
-      section.appendChild(head);
+      if(c.henry){ var hd = document.createElement("div"); hd.innerHTML = henryHtml(c, "henry-corner"); var wrapEl = el("div","wrap"); wrapEl.appendChild(hd.firstChild); wrapEl.appendChild(head); section.appendChild(wrapEl); } else { section.appendChild(head); }
 
       if(c.video && c.video.youtubeId){
         const videoBlock = el("div", "coll-video");

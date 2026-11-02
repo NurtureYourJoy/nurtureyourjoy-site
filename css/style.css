@@ -539,12 +539,6 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .trust-line-dark{ font-size:.85rem; letter-spacing:.04em; color:var(--ink-soft); margin-top:18px; }
 .henry-stage{ position:relative; z-index:2; margin:0; pointer-events:none; }
 .henry-stage video{ width:100%; height:auto; display:block; }
-@media (min-width:861px){
-  .henry-hero{ padding:66px 0 0; }
-  .henry-hero-text{ position:absolute; z-index:3; top:110px; left:0; right:0; }
-  .henry-hero-text > *{ max-width:46%; }
-  .henry-hero-text .henry-sub{ max-width:42ch; }
-}
 .henry-caption{ font-family:'Alex Brush',cursive; font-size:1.5rem; color:var(--gold); margin-top:14px; }
 @media (max-width:860px){ .henry-hero{ padding-top:60px; } }
 
@@ -566,3 +560,12 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .joy-form iframe{ width:100%; max-width:700px; height:720px; border:0; background:#fff; border-radius:12px; }
 .joy-booth{ margin-top:36px; }
 .joy-qr{ display:block; margin-top:10px; border-radius:8px; }
+
+.main-nav a{ white-space:nowrap; }
+@media (min-width:861px){ .main-nav{ gap:18px; } .main-nav a{ letter-spacing:.06em; } }
+
+/* Henry on the collections overview */
+.coll-card{ position:relative; }
+.henry-card{ position:absolute; right:10px; bottom:6px; width:110px; text-align:center; pointer-events:none; z-index:3; }
+.henry-card img, .henry-card video{ width:100%; height:auto; display:block; }
+.henry-card .henry-say{ display:block; font-family:'Alex Brush',cursive; font-size:1.15rem; color:#fff; text-shadow:0 1px 6px rgba(0,0,0,.6); margin-top:-4px; }
