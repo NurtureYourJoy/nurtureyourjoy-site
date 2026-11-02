@@ -253,7 +253,7 @@ const pages = [
   ["", "1.0", "weekly"], ["collections.html", "0.9", "weekly"],
   ...Object.values(SEO).map(v => [v.slug + ".html", "0.8", "weekly"]),
   ["story.html", "0.6", "monthly"], ["bird-cam.html", "0.6", "monthly"],
-  ["craft-shows.html", "0.6", "monthly"], ["merch.html", "0.5", "monthly"], ["contact.html", "0.5", "monthly"]
+  ["craft-shows.html", "0.6", "monthly"], ["merch.html", "0.5", "monthly"], ["contact.html", "0.5", "monthly"], ["gifts.html", "0.7", "monthly"], ["returns.html", "0.4", "yearly"]
 ];
 const today = new Date().toISOString().slice(0, 10);
 fs.writeFileSync(ROOT + "/sitemap.xml",
