@@ -78,15 +78,42 @@
 (function(){
   var box=document.getElementById("joyNotes"); if(!box||typeof JOY_NOTES==="undefined")return;
   var colors=["#FFF3A8","#FFD6E0","#CDEBFF","#D8F5C9"], tilt=[-2,1.5,-1,2.5];
-  JOY_NOTES.forEach(function(n,i){
+  var e=document.createElement("div"); e.className="joy-note joy-note-empty"; e.style.background="#fff";
+  e.innerHTML="<p>Your note could be next!</p>"; box.appendChild(e);
+  var count=0;
+  function addNote(n){
+    var i=count++;
     var d=document.createElement("div"); d.className="joy-note";
     d.style.background=colors[i%colors.length]; d.style.transform="rotate("+tilt[i%tilt.length]+"deg)";
     var p=document.createElement("p"); p.textContent=n.note; d.appendChild(p);
     var s=document.createElement("span"); s.textContent="\u2014 "+n.name+(n.place?", "+n.place:""); d.appendChild(s);
-    box.appendChild(d);
-  });
-  var e=document.createElement("div"); e.className="joy-note joy-note-empty"; e.style.background="#fff";
-  e.innerHTML="<p>Your note could be next!</p>"; box.appendChild(e);
+    box.insertBefore(d,e);
+  }
+  JOY_NOTES.forEach(addNote);
+  /* Notes Wendy approves in the Joy Board Google Sheet (type "yes" in the Approved column) load here automatically. */
+  var CSV_URL="https://docs.google.com/spreadsheets/d/e/2PACX-1vQoxO9fGD2mNe9BPDLZWBXlOYE3gn0bZ9dpDSM9KrPdcNBn8qc-CX7Li7kAPDvRWphKy3NyLOyKcsaJ/pub?gid=886362048&single=true&output=csv";
+  function parseCSV(t){
+    var rows=[],row=[],f="",q=false;
+    for(var i=0;i<t.length;i++){
+      var c=t[i];
+      if(q){ if(c==='"'){ if(t[i+1]==='"'){f+='"';i++;} else q=false; } else f+=c; }
+      else if(c==='"') q=true;
+      else if(c===","){ row.push(f); f=""; }
+      else if(c==="\n"||c==="\r"){ if(c==="\r"&&t[i+1]==="\n")i++; row.push(f); rows.push(row); row=[]; f=""; }
+      else f+=c;
+    }
+    if(f!==""||row.length){ row.push(f); rows.push(row); }
+    return rows;
+  }
+  fetch(CSV_URL).then(function(r){return r.text();}).then(function(t){
+    var seen={};
+    JOY_NOTES.forEach(function(n){seen[n.note.trim().toLowerCase()]=1;});
+    parseCSV(t).forEach(function(r){
+      var note=(r[0]||"").trim(); if(!note||seen[note.toLowerCase()])return;
+      seen[note.toLowerCase()]=1;
+      addNote({note:note.slice(0,400),name:((r[1]||"").trim().split(/\s+/)[0]||"A friend").slice(0,30),place:""});
+    });
+  }).catch(function(){});
 })();
 </script>
 
