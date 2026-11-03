@@ -131,11 +131,8 @@ const COLLECTIONS = [
       { files: ["adobe-show-oy.jpg"], name: "Adobe Pueblo, Orange & Yellow", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/5kQ8wIgaFdDM0uicfQbwk0j" },
       { files: ["adobe-rt1-front.jpg", "adobe-rt1-side.jpg"], name: "Adobe Pueblo, Red & Teal", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
       { files: ["adobe-yr1-front.jpg", "adobe-yr1-side.jpg"], name: "Adobe Pueblo, Yellow & Red", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
-      { files: ["adobe-go1-front.jpg"], name: "Adobe Pueblo, Green & Orange", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
-      { files: ["adobe-ot1-front.jpg"], name: "Adobe Pueblo, Orange & Teal", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
-      { files: ["adobe-tr1-front.jpg"], name: "Adobe Pueblo, Teal & Red", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true },
       { files: ["adobe-show-yg.jpg"], name: "Adobe Pueblo, Yellow & Green", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x200caQlfLU1ymenYbwk0p" },
-      { files: ["adobe-ty1-front.jpg"], name: "Adobe Pueblo, Teal & Yellow", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: null, soldOut: true }
+      { files: ["photo-coming-soon.jpg"], name: "Adobe Pueblo, Cobalt Blue & Yellow", price: 50, shipping: "Plus $15 flat-rate shipping (contiguous US only)", comingSoon: true },
     ]
   },
   {
