@@ -109,13 +109,13 @@ const COLLECTIONS = [
     },
     status: "live",
     items: [
-      { files: ["wh-mlg1.jpg", "wh-mlg2.jpg"], name: "Whimsical Cottage, Magenta & Lime Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/eVq7sEe2x43c5OC5Rsbwk0U" },
-      { files: ["wh-pt1.jpg", "wh-pt2.jpg"], name: "Whimsical Cottage, Purple & Teal", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x2bIUf6B43c2Cq6Vwbwk0V" },
-      { files: ["wh-bt1.jpg", "wh-bt2.jpg"], name: "Whimsical Cottage, Blue & Teal", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/7sY5kw7E9gPY7WKdjUbwk0W" },
+      { files: ["wh-mlg-1.jpg", "wh-mlg-2.jpg", "wh-mlg-3.jpg", "wh-mlg-4.jpg"], name: "Whimsical Cottage, Magenta & Lime Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/eVq7sEe2x43c5OC5Rsbwk0U" },
+      { files: ["wh-pt-1.jpg", "wh-pt-2.jpg", "wh-pt-3.jpg", "wh-pt-4.jpg"], name: "Whimsical Cottage, Purple & Teal", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x2bIUf6B43c2Cq6Vwbwk0V" },
+      { files: ["wh-bt-1.jpg", "wh-bt-2.jpg", "wh-bt-3.jpg", "wh-bt-4.jpg"], name: "Whimsical Cottage, Blue & Teal", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/7sY5kw7E9gPY7WKdjUbwk0W" },
       { files: ["wh-blg1.jpg", "wh-blg2.jpg"], name: "Whimsical Teardrop, Blue & Lime Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x2aEQ2jP6bkcd05Rsbwk0X" },
       { files: ["wh-op1.jpg"], name: "Whimsical Cottage, Orange & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/9B63coe2x2Z86SG4Nobwk0Y" },
-      { files: ["wh-rb1.jpg", "wh-rb2.jpg"], name: "Whimsical Cottage, Blue & Red", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x2dR2e2x43c1ymgw6bwk17" },
-      { files: ["wh-bn1.jpg", "wh-bn2.jpg"], name: "Whimsical Cottage, Blue & Natural", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/4gM9AM9MharA7WK2Fgbwk19" },
+      { files: ["wh-rb-1.jpg", "wh-rb-2.jpg", "wh-rb-3.jpg", "wh-rb-4.jpg"], name: "Whimsical Cottage, Blue & Red", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x2dR2e2x43c1ymgw6bwk17" },
+      { files: ["wh-bn-1.jpg", "wh-bn-2.jpg", "wh-bn-3.jpg", "wh-bn-4.jpg"], name: "Whimsical Cottage, Blue & Natural", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/4gM9AM9MharA7WK2Fgbwk19" },
       { files: ["photo-coming-soon.jpg"], name: "Whimsical Cottage, Burgundy & Natural", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", comingSoon: true }
     ]
   },
