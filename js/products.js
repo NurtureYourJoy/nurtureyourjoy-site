@@ -114,8 +114,8 @@ const COLLECTIONS = [
       { files: ["wh-bt1.jpg", "wh-bt2.jpg"], name: "Whimsical Cottage, Blue & Teal", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/7sY5kw7E9gPY7WKdjUbwk0W" },
       { files: ["wh-blg1.jpg", "wh-blg2.jpg"], name: "Whimsical Teardrop, Blue & Lime Green", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x2aEQ2jP6bkcd05Rsbwk0X" },
       { files: ["wh-op1.jpg"], name: "Whimsical Cottage, Orange & Purple", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/9B63coe2x2Z86SG4Nobwk0Y" },
-      { files: ["photo-coming-soon.jpg"], name: "Whimsical Cottage, Blue & Red", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", comingSoon: true },
-      { files: ["photo-coming-soon.jpg"], name: "Whimsical Cottage, Blue & Natural", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", comingSoon: true },
+      { files: ["wh-rb1.jpg", "wh-rb2.jpg"], name: "Whimsical Cottage, Blue & Red", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/8x2dR2e2x43c1ymgw6bwk17" },
+      { files: ["wh-bn1.jpg", "wh-bn2.jpg"], name: "Whimsical Cottage, Blue & Natural", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/4gM9AM9MharA7WK2Fgbwk19" },
       { files: ["photo-coming-soon.jpg"], name: "Whimsical Cottage, Burgundy & Natural", price: 65, shipping: "Plus $15 flat-rate shipping (contiguous US only)", comingSoon: true }
     ]
   },
@@ -151,9 +151,8 @@ const COLLECTIONS = [
     items: [
       { files: ["feeder-whimsical-mt1.jpg", "feeder-whimsical-mt2.jpg"], blurb: "A hanging tray feeder topped with a hand-painted Whimsical birdhouse. Watch the birds eat at a feeder in this same style, just in different colors: <a href=\"https://www.youtube.com/watch?v=cEPc1EXvzBk\" target=\"_blank\" rel=\"noopener\">see the video</a>.", name: "Whimsical Tray Feeder, Magenta & Teal", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/fZu7sE9MhgPYel8fs2bwk0R" },
       { files: ["feeder-whimsical-bt1.jpg", "feeder-whimsical-bt2.jpg"], blurb: "A hanging tray feeder topped with a hand-painted Whimsical birdhouse. Watch the birds eat at a feeder in this same style, just in different colors: <a href=\"https://www.youtube.com/watch?v=cEPc1EXvzBk\" target=\"_blank\" rel=\"noopener\">see the video</a>.", name: "Whimsical Tray Feeder, Blue & Teal", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/dRm8wIbUp0R07WKbbMbwk0Q" },
-      /* Stripe links already made for the two coming-soon colors: Blue & Natural https://buy.stripe.com/28E14gbUp57g7WK6Vwbwk0S , Burgundy & Natural https://buy.stripe.com/7sY9AMcYt57ga4Sgw6bwk0T */
-      { files: ["photo-coming-soon.jpg"], name: "Whimsical Tray Feeder, Blue & Natural", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", comingSoon: true },
-      { files: ["photo-coming-soon.jpg"], name: "Whimsical Tray Feeder, Burgundy & Natural", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", comingSoon: true }
+      { files: ["feeder-whimsical-bn1.jpg", "feeder-whimsical-bn2.jpg"], blurb: "A hanging tray feeder topped with a hand-painted Whimsical birdhouse. Watch the birds eat at a feeder in this same style, just in different colors: <a href=\"https://www.youtube.com/watch?v=cEPc1EXvzBk\" target=\"_blank\" rel=\"noopener\">see the video</a>.", name: "Whimsical Tray Feeder, Blue & Natural", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/28E14gbUp57g7WK6Vwbwk0S" },
+      { files: ["feeder-whimsical-brn1.jpg", "feeder-whimsical-brn2.jpg"], blurb: "A hanging tray feeder topped with a hand-painted Whimsical birdhouse. Watch the birds eat at a feeder in this same style, just in different colors: <a href=\"https://www.youtube.com/watch?v=cEPc1EXvzBk\" target=\"_blank\" rel=\"noopener\">see the video</a>.", name: "Whimsical Tray Feeder, Burgundy & Natural", price: 65, shipping: "Plus $17 flat-rate shipping (contiguous US only)", buyLink: "https://buy.stripe.com/7sY9AMcYt57ga4Sgw6bwk0T" }
     ]
   },
   {
