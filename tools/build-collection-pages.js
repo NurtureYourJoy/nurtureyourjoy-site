@@ -18,28 +18,28 @@ const SEO = {
   "western": {
     slug: "western-birdhouses",
     title: "Handmade Western Birdhouses: Saloon, Sheriff, Jail & General Store | Nurture Your Joy",
-    desc: "Handmade Western birdhouses shaped like an Old West saloon, sheriff's office, jail, hotel and general store. Cedar, with juniper-branch porch posts. $65 each, made in Arizona.",
+    desc: "Handmade Western birdhouses shaped like an Old West saloon, sheriff's office, jail, hotel and general store. Cedar, with juniper-branch porch posts. $60 each, made in Arizona.",
     h1: "Western Birdhouses",
     intro: "Old West storefronts at birdhouse scale. Each Western birdhouse is built by hand in Williams, Arizona, with porch posts, bench seats and hitching posts cut from natural juniper and cedar branches, so no two are exactly alike."
   },
   "adobe": {
     slug: "adobe-birdhouses",
     title: "Adobe Pueblo Birdhouses, Handmade Southwestern Birdhouses | Nurture Your Joy",
-    desc: "Handmade adobe pueblo birdhouses with stepped silhouettes and hand-set viga posts, hand-painted in Southwest colors. $50 each, built in Williams, Arizona.",
+    desc: "Handmade adobe pueblo birdhouses with stepped silhouettes and hand-set viga posts, hand-painted in Southwest colors. $60 each, built in Williams, Arizona.",
     h1: "Adobe Pueblo Birdhouses",
     intro: "Stepped pueblo silhouettes with hand-set viga posts, inspired by the adobe architecture of the high desert Southwest. Each one is hand-built from cedar and hand-painted in its own color combination."
   },
   "spanish-mission": {
     slug: "spanish-mission-birdhouses",
     title: "Spanish Mission Birdhouses: Handmade Cedar Bell Tower Birdhouses | Nurture Your Joy",
-    desc: "Handmade Spanish Mission birdhouses in real cedar with bell towers, cross spires and arched windows. Watch one get built from raw cedar. $80 each, made in Arizona.",
+    desc: "Handmade Spanish Mission birdhouses in real cedar with bell towers, cross spires and arched windows. Watch one get built from raw cedar. $60 each, made in Arizona.",
     h1: "Spanish Mission Birdhouses",
     intro: "Bell towers, cross spires and arched windows, modeled after the old Spanish missions of the Southwest. Built from real cedar and hand-painted, each Spanish Mission birdhouse is made one at a time."
   },
   "whimsical": {
     slug: "whimsical-birdhouses",
     title: "Whimsical Cottage & Teardrop Birdhouses, Handmade Fairytale Birdhouses | Nurture Your Joy",
-    desc: "Handmade whimsical cottage and teardrop birdhouses, curved and hand-painted in bold colors. A little fairytale for your garden. $65 each, made in Arizona.",
+    desc: "Handmade whimsical cottage and teardrop birdhouses, curved and hand-painted in bold colors. A little fairytale for your garden. $60 each, made in Arizona.",
     h1: "Whimsical Birdhouses",
     intro: "A little fantasy for the flower bed. These cottage and teardrop birdhouses are curved and painted by hand, each in its own colors. You may not live in a fairytale house, but your birds can."
   },
