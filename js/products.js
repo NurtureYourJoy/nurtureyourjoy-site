@@ -50,7 +50,7 @@ const COLLECTIONS = [
   },
   {
     id: "western",
-    henry: { type: "video", src: "assets/henry/henry-sheriff.webm", alt: "Sheriff Henry", say: "Howdy, pardner!", fade: "bottom" },
+    henry: { type: "video", src: "assets/henry/henry-wanted.webm", alt: "Sheriff Henry tacking up a Wanted: Joy poster", say: "Howdy, pardner!", fade: "bottom" },
     name: "The Western Collection",
     tagline: "Saloons, sheriffs and general stores, whittled down to birdhouse scale.",
     dimensions: "10.5\" tall x 10\" deep x 5.5\" wide",
@@ -70,7 +70,7 @@ const COLLECTIONS = [
   },
   {
     id: "spanish-mission",
-    henry: { type: "video", src: "assets/henry/henry-guitar.webm", alt: "Henry playing guitar", say: "Olé!", fade: "bottom" },
+    henry: { type: "video", src: "assets/henry/henry-zorro-heart.webm", alt: "Zorro Henry drawing a heart with his sword", say: "Olé!", fade: "bottom" },
     name: "Spanish Mission",
     tagline: "Bell towers, cross spires and arched windows, modeled after the old Spanish missions of the Southwest.",
     dimensions: "12.25\" tall x 10\" deep x 6.75\" wide",
@@ -94,7 +94,7 @@ const COLLECTIONS = [
   },
   {
     id: "whimsical",
-    henry: { type: "video", src: "assets/henry/henry-painter.webm", alt: "Henry the painter", say: "Color me happy!", fade: "bottom" },
+    henry: { type: "video", src: "assets/henry/henry-paint-rainbow.webm", alt: "Henry the painter painting a birdhouse in rainbow colors", say: "Color me happy!", fade: "bottom" },
     name: "Whimsical",
     tagline: "A little fantasy for the flower bed, curved and painted by hand.",
     dimensions: "10.5\" tall x 9\" deep x 5.5\" wide",
@@ -137,7 +137,7 @@ const COLLECTIONS = [
   },
   {
     id: "bird-feeders",
-    henry: { type: "img", src: "assets/henry/henry-base.webp", alt: "Henry the quail", say: "Room for one more?" },
+    henry: { type: "video", src: "assets/henry/henry-sneak-peek.webm", alt: "Henry tiptoeing up to a hanging birdhouse", say: "Room for one more?", fade: "bottom" },
     name: "Bird Feeders",
     tagline: "Hanging tray feeders topped with a hand-painted Whimsical birdhouse, in four color combinations.",
     dimensions: "11.25\" tall x 11\" deep x 12\" wide",
@@ -157,7 +157,7 @@ const COLLECTIONS = [
   },
   {
     id: "garden-carry-alls",
-    henry: { type: "img", src: "assets/henry/henry-cap.webp", alt: "Henry in a ball cap", say: "Let\u2019s go garden!" },
+    henry: { type: "video", src: "assets/henry/henry-joy-jump.webm", alt: "Henry hopping with joy", say: "Let\u2019s go garden!", fade: "bottom" },
     name: "Garden Carry-Alls",
     tagline: "Handled totes for hauling tools, cut flowers and garden finds, finished with a real license plate.",
     dimensions: "12\" tall x 12.5\" deep x 5.5\" wide",
