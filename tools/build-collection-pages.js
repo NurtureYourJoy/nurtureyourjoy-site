@@ -20,12 +20,12 @@ const SEO = {
     title: "Handmade Western Birdhouses: Saloon, Sheriff, Jail & General Store | Nurture Your Joy",
     desc: "Handmade Western birdhouses shaped like an Old West saloon, sheriff's office, jail, hotel and general store. Cedar, with juniper-branch porch posts. $60 each, made in Arizona.",
     h1: "Western Birdhouses",
-    intro: "Old West storefronts at birdhouse scale. Each Western birdhouse is built by hand in Williams, Arizona, with porch posts, bench seats and hitching posts cut from natural juniper and cedar branches, so no two are exactly alike."
+    intro: "Old West storefronts at birdhouse scale. Each Western birdhouse is built by hand in Ash Fork, Arizona, with porch posts, bench seats and hitching posts cut from natural juniper and cedar branches, so no two are exactly alike."
   },
   "adobe": {
     slug: "adobe-birdhouses",
     title: "Adobe Pueblo Birdhouses, Handmade Southwestern Birdhouses | Nurture Your Joy",
-    desc: "Handmade adobe pueblo birdhouses with stepped silhouettes and hand-set viga posts, hand-painted in Southwest colors. $60 each, built in Williams, Arizona.",
+    desc: "Handmade adobe pueblo birdhouses with stepped silhouettes and hand-set viga posts, hand-painted in Southwest colors. $60 each, built in Ash Fork, Arizona.",
     h1: "Adobe Pueblo Birdhouses",
     intro: "Stepped pueblo silhouettes with hand-set viga posts, inspired by the adobe architecture of the high desert Southwest. Each one is hand-built from cedar and hand-painted in its own color combination."
   },
