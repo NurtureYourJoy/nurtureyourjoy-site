@@ -14,7 +14,8 @@ const COLLECTIONS = ctx.C, STD = ctx.N, HAND = ctx.H, SHOW = ctx.S, RET = ctx.R;
 const SHOP_CLIPS = {
   "western": { v: "P5-WantedJoy", cap: "Henry puts up the poster" },
   "spanish-mission": { v: "L1-HangIt", cap: "Where would you hang yours?" },
-  "cedar-boxes": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
+  "cedar-boxes": { v: "meet-henry", cap: "Meet Henry", full: true },
+  "adobe": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
   "whimsical": { v: "P1-10AM-PaintingWhimsie", cap: "Painting a Whimsie by hand" },
   "bird-feeders": { v: "P3-10AM-FillingFeeder", cap: "Fresh seed, served daily" },
   "birdhouse-kit": { v: "L3-KitUnbox", cap: "What\u2019s in the box?" }
@@ -115,7 +116,7 @@ COLLECTIONS.forEach(c => {
   const notes = (c.extraNotes || []).concat(base);
   const henryHtml = c.henry ? `<div class="henry-corner">${c.henry.type === "video" ? `<video class="henry-fade${c.henry.fade === "bottom" ? " henry-fade-b" : ""}" autoplay muted loop playsinline preload="auto" aria-label="${esc(c.henry.alt)}"><source src="${c.henry.src}" type="video/webm"></video>` : `<img src="${c.henry.src}" alt="${esc(c.henry.alt)}" loading="lazy">`}<span class="henry-say">${esc(c.henry.say)}</span></div>` : "";
   const sc = SHOP_CLIPS[c.id];
-  const clipHtml = sc ? `<figure class="shop-clip"><video src="assets/video/${sc.v}.mp4" poster="assets/video/${sc.v}.jpg" autoplay muted loop playsinline preload="metadata" aria-label="${esc(sc.cap)}"></video><figcaption>${esc(sc.cap)}</figcaption></figure>` : "";
+  const clipHtml = sc ? `<figure class="shop-clip"><video src="assets/video/${sc.v}.mp4" poster="assets/video/${sc.v}.jpg" ${sc.full ? "controls playsinline" : "autoplay muted loop playsinline"} preload="metadata" aria-label="${esc(sc.cap)}"></video><figcaption>${esc(sc.cap)}</figcaption></figure>` : "";
   const henryBlock = (c.henry && sc) ? `<div class="henry-duo">${henryHtml}${clipHtml}</div>` : henryHtml;
   const noteHtml = notes.map(n => esc(n));
   noteHtml.push(RET);

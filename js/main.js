@@ -172,12 +172,13 @@
     "spanish-mission": { v: "L1-HangIt", cap: "Where would you hang yours?" },
     "whimsical": { v: "P1-10AM-PaintingWhimsie", cap: "Painting a Whimsie by hand" },
     "bird-feeders": { v: "P3-10AM-FillingFeeder", cap: "Fresh seed, served daily" },
-    "cedar-boxes": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
+    "cedar-boxes": { v: "meet-henry", cap: "Meet Henry", full: true },
+    "adobe": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
     "birdhouse-kit": { v: "L3-KitUnbox", cap: "What\u2019s in the box?" }
   };
   function shopClipHtml(c){
     var s = SHOP_CLIPS[c.id]; if(!s) return "";
-    return '<figure class="shop-clip"><video src="assets/video/' + s.v + '.mp4" poster="assets/video/' + s.v + '.jpg" autoplay muted loop playsinline preload="metadata" aria-label="' + s.cap + '"></video><figcaption>' + s.cap + '</figcaption></figure>';
+    return '<figure class="shop-clip"><video src="assets/video/' + s.v + '.mp4" poster="assets/video/' + s.v + '.jpg" ' + (s.full ? 'controls playsinline preload="metadata"' : 'autoplay muted loop playsinline preload="metadata"') + ' aria-label="' + s.cap + '"></video><figcaption>' + s.cap + '</figcaption></figure>';
   }
   /* ---------- render: collections overview grid ---------- */
   const collGrid = document.querySelector("[data-collections-grid]");
