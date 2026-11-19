@@ -173,6 +173,7 @@
     "whimsical": { v: "P1-10AM-PaintingWhimsie", cap: "Painting a Whimsie by hand" },
     "bird-feeders": { v: "P3-10AM-FillingFeeder", cap: "Fresh seed, served daily" },
     "cedar-boxes": { v: "meet-henry", cap: "Meet Henry", full: true },
+    "garden-carry-alls": { v: "P6-PackingForFlagstaff", cap: "Packing up for the Flagstaff show" },
     "adobe": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
     "birdhouse-kit": { v: "L3-KitUnbox", cap: "What\u2019s in the box?" }
   };

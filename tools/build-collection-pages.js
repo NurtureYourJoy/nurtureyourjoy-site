@@ -15,6 +15,7 @@ const SHOP_CLIPS = {
   "western": { v: "P5-WantedJoy", cap: "Henry puts up the poster" },
   "spanish-mission": { v: "L1-HangIt", cap: "Where would you hang yours?" },
   "cedar-boxes": { v: "meet-henry", cap: "Meet Henry", full: true },
+  "garden-carry-alls": { v: "P6-PackingForFlagstaff", cap: "Packing up for the Flagstaff show" },
   "adobe": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
   "whimsical": { v: "P1-10AM-PaintingWhimsie", cap: "Painting a Whimsie by hand" },
   "bird-feeders": { v: "P3-10AM-FillingFeeder", cap: "Fresh seed, served daily" },
