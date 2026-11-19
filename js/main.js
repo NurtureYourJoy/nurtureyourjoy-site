@@ -167,6 +167,18 @@
     return '<div class="' + cls + '">' + media + '<span class="henry-say">' + h.say + "</span></div>";
   }
   const COLL_PAGES = {"western":"western-birdhouses.html","adobe":"adobe-birdhouses.html","spanish-mission":"spanish-mission-birdhouses.html","whimsical":"whimsical-birdhouses.html","bird-feeders":"bird-feeders.html","garden-carry-alls":"garden-carry-alls.html","cedar-boxes":"cedar-boxes.html","birdhouse-kit":"birdhouse-kit.html"};
+  const SHOP_CLIPS = {
+    "western": { v: "P5-WantedJoy", cap: "Henry puts up the poster" },
+    "spanish-mission": { v: "L1-HangIt", cap: "Where would you hang yours?" },
+    "whimsical": { v: "P1-10AM-PaintingWhimsie", cap: "Painting a Whimsie by hand" },
+    "bird-feeders": { v: "P3-10AM-FillingFeeder", cap: "Fresh seed, served daily" },
+    "cedar-boxes": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
+    "birdhouse-kit": { v: "L3-KitUnbox", cap: "What\u2019s in the box?" }
+  };
+  function shopClipHtml(c){
+    var s = SHOP_CLIPS[c.id]; if(!s) return "";
+    return '<figure class="shop-clip"><video src="assets/video/' + s.v + '.mp4" poster="assets/video/' + s.v + '.jpg" autoplay muted loop playsinline preload="metadata" aria-label="' + s.cap + '"></video><figcaption>' + s.cap + '</figcaption></figure>';
+  }
   /* ---------- render: collections overview grid ---------- */
   const collGrid = document.querySelector("[data-collections-grid]");
   if(collGrid){
@@ -214,7 +226,7 @@
         "<h2 class=\"section-title\">" + c.name + "</h2>" +
         '<p class="lede">' + c.tagline + "</p>" +
         dimsLine + notesLines + "</div>";
-      if(c.henry){ var hd = document.createElement("div"); hd.innerHTML = henryHtml(c, "henry-corner"); var wrapEl = el("div","wrap"); wrapEl.appendChild(hd.firstChild); wrapEl.appendChild(head); section.appendChild(wrapEl); } else { section.appendChild(head); }
+      if(c.henry){ var hd = document.createElement("div"); hd.innerHTML = henryHtml(c, "henry-corner"); var wrapEl = el("div","wrap"); if(SHOP_CLIPS[c.id]){ var duo = el("div","henry-duo"); duo.appendChild(hd.firstChild); var cw = document.createElement("div"); cw.innerHTML = shopClipHtml(c); duo.appendChild(cw.firstChild); wrapEl.appendChild(duo); } else { wrapEl.appendChild(hd.firstChild); } wrapEl.appendChild(head); section.appendChild(wrapEl); } else { section.appendChild(head); }
 
       if(c.video && c.video.youtubeId){
         const videoBlock = el("div", "coll-video");

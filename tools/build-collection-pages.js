@@ -13,6 +13,8 @@ const COLLECTIONS = ctx.C, STD = ctx.N, HAND = ctx.H, SHOW = ctx.S, RET = ctx.R;
 
 const SHOP_CLIPS = {
   "western": { v: "P5-WantedJoy", cap: "Henry puts up the poster" },
+  "spanish-mission": { v: "L1-HangIt", cap: "Where would you hang yours?" },
+  "cedar-boxes": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
   "whimsical": { v: "P1-10AM-PaintingWhimsie", cap: "Painting a Whimsie by hand" },
   "bird-feeders": { v: "P3-10AM-FillingFeeder", cap: "Fresh seed, served daily" },
   "birdhouse-kit": { v: "L3-KitUnbox", cap: "What\u2019s in the box?" }
