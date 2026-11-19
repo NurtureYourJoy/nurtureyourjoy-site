@@ -50,7 +50,7 @@ const COLLECTIONS = [
   },
   {
     id: "western",
-    henry: { type: "video", src: "assets/henry/henry-wanted.webm", alt: "Sheriff Henry tacking up a Wanted: Joy poster", say: "Howdy, pardner!", fade: "bottom" },
+    henry: { type: "video", src: "assets/henry/henry-stick-horse.webm", alt: "Sheriff Henry riding his stick horse", say: "Howdy, pardner!", fade: "bottom" },
     name: "The Western Collection",
     tagline: "Saloons, sheriffs and general stores, whittled down to birdhouse scale.",
     dimensions: "10.5\" tall x 10\" deep x 5.5\" wide",
