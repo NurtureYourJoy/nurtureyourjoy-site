@@ -627,3 +627,33 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 /* === Blue buttons === */
 :root{ --rust:#3A6BC5; --rust-dk:#274F9E; }
 .btn:hover{ box-shadow:0 14px 28px -14px rgba(39,79,158,.6); }
+
+
+/* === Meet Henry + In the shop (story page) === */
+.mh{padding:72px 0;background:#f7f1e6}
+.mh .wrap{max-width:1100px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:minmax(260px,360px) 1fr;gap:56px;align-items:center}
+.mh video{width:100%;border-radius:18px;box-shadow:0 12px 30px rgba(0,0,0,.18);background:#000}
+.mh .eyebrow{font:600 13px Jost,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#8a6a3b;margin:0 0 8px}
+.mh h2{font:600 44px "Cormorant Garamond",serif;margin:0 0 18px;color:#2f2a24}
+.mh p{font:400 17px/1.75 Jost,sans-serif;color:#3d362e;margin:0 0 16px}
+.mh .sig{font:400 34px "Alex Brush",cursive;color:#7a2d2d;margin-top:8px}
+.shop{padding:64px 0 80px}
+.shop .wrap{max-width:1100px;margin:0 auto;padding:0 24px;text-align:center}
+.shop h3{font:600 36px "Cormorant Garamond",serif;margin:0 0 6px;color:#2f2a24}
+.shop .sub{font:400 16px Jost,sans-serif;color:#6b6157;margin:0 0 30px}
+.shop .row{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.shop figure{margin:0}.shop video{width:100%;border-radius:14px;background:#000}
+.shop figcaption{font:500 15px Jost,sans-serif;color:#3d362e;margin-top:10px}
+@media(max-width:800px){.mh .wrap{grid-template-columns:1fr;gap:28px}.mh video{max-width:340px;margin:0 auto;display:block}.shop .row{grid-template-columns:1fr;max-width:340px;margin:0 auto}}
+
+
+/* === Shop clips beside costume Henry (Nov 19) === */
+.henry-duo{ display:flex; justify-content:center; align-items:flex-end; gap:22px; flex-wrap:wrap; margin:0 auto 14px; }
+.henry-duo .henry-corner{ margin:0 !important; }
+.shop-clip{ margin:0; width:190px; text-align:center; }
+.shop-clip video{ width:100%; height:auto; display:block; border-radius:14px; background:#000; box-shadow:0 8px 22px rgba(0,0,0,.16); }
+.shop-clip figcaption{ font:500 14px Jost,sans-serif; color:#3d362e; margin-top:8px; }
+@media (max-width:700px){ .henry-duo{ flex-direction:column; align-items:center; } .shop-clip{ width:200px; } }
+.maker-split{ max-width:980px; display:grid; grid-template-columns:1fr 230px; gap:44px; align-items:center; text-align:left; }
+.maker-split .shop-clip{ width:230px; }
+@media (max-width:760px){ .maker-split{ grid-template-columns:1fr; text-align:center; } .maker-split .shop-clip{ margin:0 auto; } }

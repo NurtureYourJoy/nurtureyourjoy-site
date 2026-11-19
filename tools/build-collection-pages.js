@@ -11,6 +11,12 @@ vm.runInContext(fs.readFileSync(ROOT + "/js/products.js", "utf8") +
   ";this.C=COLLECTIONS;this.N=STANDARD_NOTES;this.H=HAND_PAINTED_NOTE;this.S=SHOW_NOTE;this.R=RETURN_NOTE;", ctx);
 const COLLECTIONS = ctx.C, STD = ctx.N, HAND = ctx.H, SHOW = ctx.S, RET = ctx.R;
 
+const SHOP_CLIPS = {
+  "western": { v: "P5-WantedJoy", cap: "Henry puts up the poster" },
+  "whimsical": { v: "P1-10AM-PaintingWhimsie", cap: "Painting a Whimsie by hand" },
+  "bird-feeders": { v: "P3-10AM-FillingFeeder", cap: "Fresh seed, served daily" },
+  "birdhouse-kit": { v: "L3-KitUnbox", cap: "What\u2019s in the box?" }
+};
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 /* slug + hand-written search copy per collection */
@@ -106,6 +112,9 @@ COLLECTIONS.forEach(c => {
   if (c.standardNotes !== false && c.handPainted !== false) base.splice(base.length - 1, 0, HAND);
   const notes = (c.extraNotes || []).concat(base);
   const henryHtml = c.henry ? `<div class="henry-corner">${c.henry.type === "video" ? `<video class="henry-fade${c.henry.fade === "bottom" ? " henry-fade-b" : ""}" autoplay muted loop playsinline preload="auto" aria-label="${esc(c.henry.alt)}"><source src="${c.henry.src}" type="video/webm"></video>` : `<img src="${c.henry.src}" alt="${esc(c.henry.alt)}" loading="lazy">`}<span class="henry-say">${esc(c.henry.say)}</span></div>` : "";
+  const sc = SHOP_CLIPS[c.id];
+  const clipHtml = sc ? `<figure class="shop-clip"><video src="assets/video/${sc.v}.mp4" poster="assets/video/${sc.v}.jpg" autoplay muted loop playsinline preload="metadata" aria-label="${esc(sc.cap)}"></video><figcaption>${esc(sc.cap)}</figcaption></figure>` : "";
+  const henryBlock = (c.henry && sc) ? `<div class="henry-duo">${henryHtml}${clipHtml}</div>` : henryHtml;
   const noteHtml = notes.map(n => esc(n));
   noteHtml.push(RET);
   noteHtml.push(SHOW);
@@ -212,7 +221,7 @@ ${headerHtml}
 
 <section class="section collection-section" style="padding-top:150px;padding-bottom:0;">
   <div class="wrap">
-    ${henryHtml}
+    ${henryBlock}
     <div class="section-head">
       <div class="txt">
         <div class="eyebrow"><a href="collections.html" style="color:inherit;">All Collections</a></div>
