@@ -607,6 +607,11 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .cert-examples img{ width:100%; height:auto; border-radius:10px; box-shadow:var(--shadow); }
 .cert-examples figcaption{ margin-top:8px; font-size:.9rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-soft); }
 @media (max-width:760px){ .cert-examples{ grid-template-columns:1fr; } }
+.cert-buy{ gap:26px; margin:26px 0 22px; align-items:start; }
+.cert-buy figure{ display:flex; flex-direction:column; align-items:center; gap:10px; }
+.cert-buy figcaption{ margin:0; }
+.cert-buy .btn{ margin-top:2px; }
+#certificates + p{ max-width:760px; }
 
 /* === Navy top banner (header) with white text, all pages === */
 .site-header, .site-header.is-scrolled, body.no-hero .site-header{
