@@ -662,3 +662,8 @@ body.no-hero .nav-toggle span{ background:var(--ink); }
 .maker-split{ max-width:980px; display:grid; grid-template-columns:1fr 230px; gap:44px; align-items:center; text-align:left; }
 .maker-split .shop-clip{ width:230px; }
 @media (max-width:760px){ .maker-split{ grid-template-columns:1fr; text-align:center; } .maker-split .shop-clip{ margin:0 auto; } }
+
+/* Henry trademark badge + footer note */
+.tm-badge{ position:absolute; z-index:6; font:600 13px/1 Georgia,serif; color:#fff; background:rgba(30,30,30,.42); padding:3px 6px; border-radius:9px; pointer-events:none; text-shadow:0 1px 2px rgba(0,0,0,.55); display:none; }
+.tm-note{ flex-basis:100%; margin:6px 0 0; font-size:12px; opacity:.8; text-align:center; }
+.footer-bottom{ flex-wrap:wrap; }

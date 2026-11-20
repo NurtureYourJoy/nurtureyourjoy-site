@@ -358,3 +358,33 @@
   });
 
 })();
+
+/* ---------- Henry trademark badge: small TM on every Henry image/video ---------- */
+(function(){
+  var SEL = 'video.henry-fade,.henry-stage video,.shop-clip video,video[src*="henry"],video[poster*="henry"],video[aria-label*="Henry"],img[src*="henry"],.henry-card img,.henry-corner img,.cert-examples img';
+  function place(m){
+    var b = m._tm, p = m.parentNode;
+    if(!b || !p) return;
+    if(!m.offsetWidth || !m.offsetHeight){ b.style.display = "none"; return; }
+    b.style.display = "block";
+    b.style.left = (m.offsetLeft + m.offsetWidth - b.offsetWidth - 8) + "px";
+    b.style.top = (m.offsetTop + m.offsetHeight - b.offsetHeight - 8) + "px";
+  }
+  function badge(m){
+    if(m._tm) return;
+    var p = m.parentNode;
+    if(!p || m.closest(".lightbox")) return;
+    if(getComputedStyle(p).position === "static") p.style.position = "relative";
+    var b = document.createElement("span");
+    b.className = "tm-badge"; b.setAttribute("aria-hidden","true"); b.textContent = "™";
+    p.appendChild(b); m._tm = b;
+    ["load","loadedmetadata","loadeddata","resize"].forEach(function(ev){ m.addEventListener(ev, function(){ place(m); }); });
+    if(window.ResizeObserver){ new ResizeObserver(function(){ place(m); }).observe(m); }
+    place(m);
+  }
+  function scan(){ document.querySelectorAll(SEL).forEach(badge); document.querySelectorAll(SEL).forEach(function(m){ place(m); }); }
+  document.addEventListener("DOMContentLoaded", scan);
+  window.addEventListener("load", function(){ scan(); setTimeout(scan, 600); setTimeout(scan, 2000); });
+  window.addEventListener("resize", scan);
+  if(window.MutationObserver){ new MutationObserver(function(){ scan(); }).observe(document.documentElement, {childList:true, subtree:true}); }
+})();
