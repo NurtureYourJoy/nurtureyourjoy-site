@@ -368,7 +368,7 @@
     if(!m.offsetWidth || !m.offsetHeight){ b.style.display = "none"; return; }
     b.style.display = "block";
     b.style.left = (m.offsetLeft + m.offsetWidth - b.offsetWidth - 8) + "px";
-    b.style.top = (m.offsetTop + m.offsetHeight - b.offsetHeight - 8) + "px";
+    b.style.top = (m.controls ? m.offsetTop + 8 : m.offsetTop + m.offsetHeight - b.offsetHeight - 8) + "px";
   }
   function badge(m){
     if(m._tm) return;
