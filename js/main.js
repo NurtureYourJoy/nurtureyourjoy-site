@@ -166,7 +166,7 @@
       : '<img src="' + h.src + '" alt="' + h.alt + '" loading="lazy">';
     return '<div class="' + cls + '">' + media + '<span class="henry-say">' + h.say + "</span></div>";
   }
-  const COLL_PAGES = {"western":"western-birdhouses.html","adobe":"adobe-birdhouses.html","spanish-mission":"spanish-mission-birdhouses.html","whimsical":"whimsical-birdhouses.html","bird-feeders":"bird-feeders.html","garden-carry-alls":"garden-carry-alls.html","cedar-boxes":"cedar-boxes.html","birdhouse-kit":"birdhouse-kit.html"};
+  const COLL_PAGES = {"western":"western-birdhouses.html","pueblo":"pueblo-birdhouses.html","spanish-mission":"spanish-mission-birdhouses.html","whimsical":"whimsical-birdhouses.html","bird-feeders":"bird-feeders.html","garden-carry-alls":"garden-carry-alls.html","cedar-boxes":"cedar-boxes.html","birdhouse-kit":"birdhouse-kit.html"};
   const SHOP_CLIPS = {
     "western": { v: "P5-WantedJoy", cap: "Henry puts up the poster" },
     "spanish-mission": { v: "L1-HangIt", cap: "Where would you hang yours?" },
@@ -174,7 +174,7 @@
     "bird-feeders": { v: "P3-10AM-FillingFeeder", cap: "Fresh seed, served daily" },
     "cedar-boxes": { v: "meet-henry", cap: "Meet Henry", full: true },
     "garden-carry-alls": { v: "P6-PackingForFlagstaff", cap: "Packing up for the Flagstaff show" },
-    "adobe": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
+    "pueblo": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
     "birdhouse-kit": { v: "L3-KitUnbox", cap: "What\u2019s in the box?" }
   };
   function shopClipHtml(c){
@@ -223,11 +223,12 @@
       const notesLines = allNotes.length
         ? '<ul class="notes">' + allNotes.map(function(n){ return "<li>" + n + "</li>"; }).join("") + "</ul>"
         : "";
+      const dykLine = c.didYouKnow ? '<p class="dyk"><strong>Did you know?</strong> ' + c.didYouKnow + "</p>" : "";
       head.innerHTML =
         '<div class="txt"><div class="eyebrow">Collection ' + String(idx+1).padStart(2,"0") + "</div>" +
         "<h2 class=\"section-title\">" + c.name + "</h2>" +
         '<p class="lede">' + c.tagline + "</p>" +
-        dimsLine + notesLines + "</div>";
+        dimsLine + notesLines + dykLine + "</div>";
       if(c.henry){ var hd = document.createElement("div"); hd.innerHTML = henryHtml(c, "henry-corner"); var wrapEl = el("div","wrap"); if(SHOP_CLIPS[c.id]){ var duo = el("div","henry-duo"); duo.appendChild(hd.firstChild); var cw = document.createElement("div"); cw.innerHTML = shopClipHtml(c); duo.appendChild(cw.firstChild); wrapEl.appendChild(duo); } else { wrapEl.appendChild(hd.firstChild); } wrapEl.appendChild(head); section.appendChild(wrapEl); } else { section.appendChild(head); }
 
       if(c.video && c.video.youtubeId){
@@ -251,13 +252,14 @@
           const files = (item.files && item.files.length ? item.files : [item.file]).map(function(f){
             return "assets/products/" + c.id + "/" + f.replace(/\.jpe?g$/i, ".webp");
           });
-          const altText = item.name + (/^(western|adobe|spanish-mission|whimsical)$/.test(c.id) ? " birdhouse, " : ", ") + c.name + " collection";
+          const altText = item.name + (/^(western|pueblo|spanish-mission|whimsical)$/.test(c.id) ? " birdhouse, " : ", ") + c.name + " collection";
           const shipNote = item.shipping ? '<div class="ship-note">' + item.shipping + "</div>" : "";
           const thumbs = files.length > 1
             ? '<div class="thumbs">' + files.map(function(f, i){
                 return '<button class="thumb' + (i === 0 ? " is-active" : "") + '" data-i="' + i + '" aria-label="View ' + (i+1) + '"><img loading="lazy" decoding="async" width="90" height="90" src="' + f.replace(/\/([^\/]+)$/, "/thumbs/$1") + '" alt=""></button>';
-              }).join("") + "</div>"
+              }).join("") + (item.video360 ? '<button class="vthumb" aria-label="Watch the 360 degree view"><img loading="lazy" decoding="async" width="90" height="90" src="assets/products/' + c.id + '/thumbs/' + item.video360 + '.webp" alt=""><span>360&deg;</span></button>' : "") + "</div>"
             : "";
+          if(item.video360){ piece.dataset.video = "assets/products/" + c.id + "/" + item.video360 + ".mp4"; piece.dataset.poster = "assets/products/" + c.id + "/" + item.video360 + "-poster.webp"; }
           if(item.soldOut) piece.classList.add("is-sold");
           if(item.comingSoon) piece.classList.add("is-soon");
           piece.innerHTML =
@@ -323,6 +325,31 @@
         btn.classList.add("is-active");
       });
     });
+  });
+
+  /* ---------- 360-degree turntable clip on a product photo frame ---------- */
+  document.querySelectorAll(".piece[data-video]").forEach(function(piece){
+    const frame = piece.querySelector(".frame");
+    const vbtn = piece.querySelector(".vthumb");
+    if(!frame || !vbtn) return;
+    function stopVideo(){
+      const v = frame.querySelector(".frame-video");
+      if(v){ v.pause(); v.remove(); }
+      vbtn.classList.remove("is-active");
+    }
+    vbtn.addEventListener("click", function(){
+      if(frame.querySelector(".frame-video")) return;
+      const v = document.createElement("video");
+      v.className = "frame-video";
+      v.src = piece.dataset.video; v.poster = piece.dataset.poster;
+      v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true; v.controls = true;
+      v.setAttribute("aria-label", "360 degree view");
+      frame.appendChild(v);
+      piece.querySelectorAll(".thumb").forEach(function(t){ t.classList.remove("is-active"); });
+      vbtn.classList.add("is-active");
+      const p = v.play(); if(p && p.catch) p.catch(function(){});
+    });
+    piece.querySelectorAll(".thumb").forEach(function(t){ t.addEventListener("click", stopVideo); });
   });
 
   /* ---------- render: merch grid ---------- */

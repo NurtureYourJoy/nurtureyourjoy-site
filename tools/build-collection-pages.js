@@ -16,7 +16,7 @@ const SHOP_CLIPS = {
   "spanish-mission": { v: "L1-HangIt", cap: "Where would you hang yours?" },
   "cedar-boxes": { v: "meet-henry", cap: "Meet Henry", full: true },
   "garden-carry-alls": { v: "P6-PackingForFlagstaff", cap: "Packing up for the Flagstaff show" },
-  "adobe": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
+  "pueblo": { v: "P4-2PM-MeasureTwice", cap: "Measure twice, joy once" },
   "whimsical": { v: "P1-10AM-PaintingWhimsie", cap: "Painting a Whimsie by hand" },
   "bird-feeders": { v: "P3-10AM-FillingFeeder", cap: "Fresh seed, served daily" },
   "birdhouse-kit": { v: "L3-KitUnbox", cap: "What\u2019s in the box?" }
@@ -32,12 +32,12 @@ const SEO = {
     h1: "Western Birdhouses",
     intro: "Old West storefronts at birdhouse scale. Each Western birdhouse is built by hand in Ash Fork, Arizona, with porch posts, bench seats and hitching posts cut from natural juniper and cedar branches, so no two are exactly alike."
   },
-  "adobe": {
-    slug: "adobe-birdhouses",
-    title: "Adobe Pueblo Birdhouses, Handmade Southwestern Birdhouses | Nurture Your Joy",
-    desc: "Handmade adobe pueblo birdhouses with stepped silhouettes and hand-set viga posts, hand-painted in Southwest colors. $60 each, built in Ash Fork, Arizona.",
-    h1: "Adobe Pueblo Birdhouses",
-    intro: "Stepped pueblo silhouettes with hand-set viga posts, inspired by the adobe architecture of the high desert Southwest. Each one is hand-built from cedar and hand-painted in its own color combination."
+  "pueblo": {
+    slug: "pueblo-birdhouses",
+    title: "Pueblo Birdhouses: Handmade Adobe-Style Southwestern Birdhouses | Nurture Your Joy",
+    desc: "Handmade Pueblo birdhouses, made from cedar to look like adobe, with stepped walls, hand-set viga beams, a rooftop ladder and a real clay flower pot. $60 each, built in Ash Fork, Arizona.",
+    h1: "Pueblo Birdhouses",
+    intro: "Each Pueblo is handmade from cedar and finished to look like adobe, with stepped side walls, hand-set viga beams, a rustic wooden ladder, and a tiny barrel and real clay flower pot waiting on the porch. Inspired by the pueblo-style homes of the Southwest. Handmade by Wendy in Ash Fork, Arizona."
   },
   "spanish-mission": {
     slug: "spanish-mission-birdhouses",
@@ -128,9 +128,9 @@ COLLECTIONS.forEach(c => {
     const id = slugify(item.name);
     const label = item.name + (/birdhouse|feeder|carry|kit/i.test(item.name) ? "" : /^(bird-feeders|garden-carry-alls|birdhouse-kit|cedar-boxes)$/.test(c.id) ? "" : " birdhouse");
     return `
-      <div class="piece${item.soldOut ? " is-sold" : ""}${item.comingSoon ? " is-soon" : ""}" id="${id}"${files.length > 1 ? ` data-files="${files.map(f => imgPath(c, f)).join("|")}"` : ""}>
+      <div class="piece${item.soldOut ? " is-sold" : ""}${item.comingSoon ? " is-soon" : ""}" id="${id}"${files.length > 1 ? ` data-files="${files.map(f => imgPath(c, f)).join("|")}"` : ""}${item.video360 ? ` data-video="assets/products/${c.id}/${item.video360}.mp4" data-poster="assets/products/${c.id}/${item.video360}-poster.webp"` : ""}>
         <div class="frame"><img loading="lazy" decoding="async" src="${imgPath(c, files[0])}" alt="${esc(label)}, handmade ${esc(c.name)} collection${s.keywords ? ", also known as a bandsaw box" : ""}, Nurture Your Joy">${item.soldOut ? '<span class="sold-badge">Sold out<br><small>More coming soon</small></span>' : ""}</div>${files.length > 1 ? `
-        <div class="thumbs">${files.map((f, i) => `<button class="thumb${i === 0 ? " is-active" : ""}" data-i="${i}" aria-label="View ${i + 1}"><img loading="lazy" decoding="async" width="90" height="90" src="${imgPath(c, f).replace(/\/([^\/]+)$/, "/thumbs/$1")}" alt=""></button>`).join("")}</div>` : ""}
+        <div class="thumbs">${files.map((f, i) => `<button class="thumb${i === 0 ? " is-active" : ""}" data-i="${i}" aria-label="View ${i + 1}"><img loading="lazy" decoding="async" width="90" height="90" src="${imgPath(c, f).replace(/\/([^\/]+)$/, "/thumbs/$1")}" alt=""></button>`).join("")}${item.video360 ? `<button class="vthumb" aria-label="Watch the 360 degree view"><img loading="lazy" decoding="async" width="90" height="90" src="assets/products/${c.id}/thumbs/${item.video360}.webp" alt=""><span>360&deg;</span></button>` : ""}</div>` : ""}
         <div class="info"><h3 style="font-size:1.25rem;margin:0 0 6px;">${esc(item.name)}</h3>
           <div class="price">$${item.price.toFixed(0)}</div>
           ${item.blurb ? `<p class="blurb">${item.blurb}</p>` : ""}
@@ -233,6 +233,7 @@ ${headerHtml}
         <p class="lede">${esc(s.intro)}</p>
         ${c.dimensions ? `<p class="dims">Approx. dimensions: ${esc(c.dimensions)}</p>` : ""}
         ${noteHtml.length ? `<ul class="notes">${noteHtml.map(n => `<li>${n}</li>`).join("")}</ul>` : ""}
+        ${c.didYouKnow ? `<p class="dyk"><strong>Did you know?</strong> ${esc(c.didYouKnow)}</p>` : ""}
       </div>
     </div>
   </div>
