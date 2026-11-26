@@ -48,10 +48,10 @@ const SEO = {
   },
   "whimsical": {
     slug: "whimsical-birdhouses",
-    title: "Whimsical Cottage & Teardrop Birdhouses, Handmade Fairytale Birdhouses | Nurture Your Joy",
-    desc: "Handmade whimsical cottage and teardrop birdhouses, curved and hand-painted in bold colors. A little fairytale for your garden. $60 each, made in Arizona.",
+    title: "Whimsical Cottage Birdhouses, Handmade Fairytale Birdhouses | Nurture Your Joy",
+    desc: "Handmade whimsical cottage birdhouses, curved and hand-painted in bold colors. A little fairytale for your garden. $60 each, made in Arizona.",
     h1: "Whimsical Birdhouses",
-    intro: "A little fantasy for the flower bed. These cottage and teardrop birdhouses are curved and painted by hand, each in its own colors. You may not live in a fairytale house, but your birds can."
+    intro: "A little fantasy for the flower bed. These cottage birdhouses are curved and painted by hand, each in its own colors. You may not live in a fairytale house, but your birds can."
   },
   "bird-feeders": {
     slug: "bird-feeders",
